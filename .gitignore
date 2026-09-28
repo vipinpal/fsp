@@ -5,6 +5,7 @@
 
 # Production / Build outputs
 /build
+/dist
 /dist-ssr
 # Testing
 /coverage
