@@ -1,0 +1,89 @@
+export const admissionsContent = {
+  overview: {
+    eyebrow: "Admissions Session 2026–27",
+    title: "Begin Your Educational Journey With Us",
+    subtitle: "We welcome applications from motivated learners eager to thrive in a diverse, collaborative, and challenging academic environment.",
+    currentSession: "Session 2026–27",
+    statusText: "Registrations Now Open",
+  },
+
+  steps: [
+    {
+      step: 1,
+      title: "Online Registration & Enquiry",
+      description: "Fill the quick online enquiry form or collect the prospectus from the school admissions desk.",
+    },
+    {
+      step: 2,
+      title: "Campus Tour & Informal Interaction",
+      description: "Parents and students visit the campus, view the smart labs and facilities, and participate in an informal dialogue with our academic mentors.",
+    },
+    {
+      step: 3,
+      title: "Document Submission & Assessment",
+      description: "Submit relevant certificates, previous academic records, and for higher grades, participate in an aptitude assessment.",
+    },
+    {
+      step: 4,
+      title: "Enrollment & Orientation",
+      description: "Pay the admission fee, receive uniform and book sets, and attend the new parent & student welcome orientation.",
+    },
+  ],
+
+  eligibility: [
+    { grade: "Pre-Nursery", minAge: "2.5 Years", maxAge: "3 Years as of 31st March" },
+    { grade: "Nursery", minAge: "3 Years", maxAge: "4 Years as of 31st March" },
+    { grade: "Kindergarten (KG)", minAge: "4 Years", maxAge: "5 Years as of 31st March" },
+    { grade: "Grade I", minAge: "5.5 Years", maxAge: "6.5 Years as of 31st March" },
+    { grade: "Grades II – X", minAge: "Corresponding age progression", maxAge: "Report card and TC of previous recognized school" },
+    { grade: "Grade XI (Streams)", minAge: "Board Passed (CBSE / ICSE / State)", maxAge: "Admission based on Class X Board percentage & stream criteria" },
+  ],
+
+  documentsRequired: [
+    "Original and photocopy of the Child's Birth Certificate issued by Municipal Corporation.",
+    "Recent passport-size color photographs (6 of the child, 2 of each parent/guardian).",
+    "Proof of Residence (Electricity bill / Passport / Aadhar Card / Rental agreement).",
+    "Aadhar Card copy of child and parents.",
+    "Previous year's Report Card / Marksheet (for admission to Grade II and above).",
+    "Transfer Certificate (Original countersigned by authorized education board).",
+    "Immunization & Medical Fitness record signed by a registered pediatrician.",
+  ],
+
+  feeStructure: {
+    note: "All fees are transparent, collected quarterly, and regulated in strict compliance with education board guidelines. No capitation fee is ever charged.",
+    tiers: [
+      {
+        gradeRange: "Early Childhood (Pre-Nursery – KG)",
+        tuitionQuarterly: "₹ 24,500",
+        annualCharges: "₹ 18,000",
+        activityFeeQuarterly: "₹ 4,500",
+      },
+      {
+        gradeRange: "Primary Wing (Grades I – V)",
+        tuitionQuarterly: "₹ 29,000",
+        annualCharges: "₹ 22,000",
+        activityFeeQuarterly: "₹ 5,000",
+      },
+      {
+        gradeRange: "Middle Wing (Grades VI – VIII)",
+        tuitionQuarterly: "₹ 33,500",
+        annualCharges: "₹ 24,000",
+        activityFeeQuarterly: "₹ 6,000",
+      },
+      {
+        gradeRange: "Secondary (Grades IX – X)",
+        tuitionQuarterly: "₹ 38,000",
+        annualCharges: "₹ 26,000",
+        activityFeeQuarterly: "₹ 6,500",
+      },
+      {
+        gradeRange: "Senior Secondary (Grades XI – XII)",
+        tuitionQuarterly: "₹ 44,000",
+        annualCharges: "₹ 28,000",
+        activityFeeQuarterly: "₹ 7,500",
+      },
+    ],
+    oneTimeAdmissionFee: "₹ 35,000 (Payable only at the time of initial admission)",
+    cautionMoneyRefundable: "₹ 10,000 (Refundable upon withdrawal)",
+  },
+};

@@ -1,0 +1,104 @@
+export const academicsContent = {
+  overview: {
+    eyebrow: "Holistic Academics",
+    title: "Inspiring Intellectual Curiosity & Mastery",
+    lead: "At Green Valley International School, academic excellence is built on deep conceptual understanding rather than superficial memorization.",
+    boardAffiliation: "Affiliated to Central Board of Secondary Education (CBSE), New Delhi",
+    curriculumHighlights: [
+      "Interdisciplinary STEM (Science, Technology, Engineering, Math) projects",
+      "Experiential, inquiry-driven pedagogy aligned with NEP 2020 guidelines",
+      "Rigorous preparation for Olympiads, JEE, NEET, CUET, and SAT",
+      "Bilingual and multilingual competency with French, German & Sanskrit options",
+      "Regular diagnostic assessments with actionable student growth profiles",
+    ],
+  },
+
+  wings: {
+    kindergarten: {
+      title: "Early Childhood & Kindergarten",
+      ageSpan: "Ages 3 to 5 (Pre-Nursery, Nursery, KG)",
+      focus: "Playway Discovery, Sensorial Learning, Emotional Security",
+      description: "Our early learning sanctuary is designed to nurture wonder and imagination. In an atmosphere of warmth and safety, children develop phonetic phonics, early numeracy, and fine motor skills through guided play, puppetry, nature exploration, and music.",
+      keyFeatures: [
+        "Theme-based learning corners (Science, Art, Building, Reading)",
+        "Montessori sensory-motor apparatus and organic tactile toys",
+        "Emphasis on storytelling, social sharing, and emotional vocabulary",
+        "Safe, cushioned indoor soft-play arenas and outdoor splash pools",
+      ],
+    },
+    primary: {
+      title: "Primary Wing (Grades I to V)",
+      ageSpan: "Ages 6 to 10",
+      focus: "Foundational Literacy, Numeracy & Inquiry-Based Discovery",
+      description: "During the primary years, curiosity is channeled into structured habits of thinking. Learners explore integrated modules combining language arts, environmental sciences, mathematics, and computers, encouraging them to connect textbook concepts to the real world.",
+      keyFeatures: [
+        "Inquiry cycles based on real-world community problems",
+        "Mental math sprints and interactive mathematical manipulatives",
+        "Introduction to foundational coding, robotics, and digital ethics",
+        "Daily library reading circles to build rich vocabularies",
+      ],
+    },
+    middle: {
+      title: "Middle School Wing (Grades VI to VIII)",
+      ageSpan: "Ages 11 to 13",
+      focus: "Analytical Reasoning, Laboratory Science & Collaborative Research",
+      description: "Middle school marks a vital transition towards independent analytical reasoning. Students begin hands-on experiments in dedicated science laboratories, study third languages, and participate in competitive debate and mathematical challenges.",
+      keyFeatures: [
+        "Separate physics, chemistry, and biology laboratory experiments",
+        "Introduction to foreign languages (French & German) and Sanskrit",
+        "Project-based learning with multimedia presentations and seminars",
+        "Compulsory participation in co-curricular clubs and house sports",
+      ],
+    },
+    secondary: {
+      title: "Secondary Wing (Grades IX & X)",
+      ageSpan: "Ages 14 to 15",
+      focus: "CBSE Board Rigor, Conceptual Depth & Career Foundation",
+      description: "The secondary wing prepares students thoroughly for the CBSE All India Secondary School Examination (AISSE). Focus is directed towards rigorous problem-solving, structured practice, and conceptual clarity across all subjects.",
+      keyFeatures: [
+        "Exhaustive coverage of CBSE curriculum with regular mock testing",
+        "Intensive remedial classes and personalized mentoring clinics",
+        "Career counseling workshops and aptitude profiling",
+        "Hands-on AI and IT skill electives recognized by CBSE",
+      ],
+    },
+    seniorSecondary: {
+      title: "Senior Secondary Wing (Grades XI & XII)",
+      ageSpan: "Ages 16 to 18",
+      focus: "Stream Specialization, Competitive Readiness & Leadership",
+      description: "Senior secondary offers specialized academic streams taught by distinguished post-graduate faculty. Students receive integrated guidance for CBSE board examinations alongside competitive national exams.",
+      streams: [
+        {
+          name: "Science (Medical / Non-Medical)",
+          subjects: "Physics, Chemistry, Mathematics / Biology, Computer Science, Physical Education",
+          careers: "Engineering, Medicine, Biotechnology, Architecture, Pure Research, Data Science",
+        },
+        {
+          name: "Commerce Stream",
+          subjects: "Accountancy, Business Studies, Economics, Mathematics / Applied Math, Informatics Practices",
+          careers: "Chartered Accountancy, Investment Banking, Corporate Law, Management, Entrepreneurship",
+        },
+        {
+          name: "Humanities & Liberal Arts",
+          subjects: "History, Political Science, Psychology, Economics, Sociology, English Elective",
+          careers: "Civil Services, International Relations, Law, Journalism, Design, Public Policy",
+        },
+      ],
+    },
+  },
+
+  academicCalendar: [
+    { month: "April 2026", event: "Commencement of New Academic Session (Term 1)" },
+    { month: "May 2026", event: "Investiture Ceremony & Student Council Elections" },
+    { month: "June 2026", event: "Summer Vacation & Remedial Online Workshops" },
+    { month: "July 2026", event: "School Reopens; Periodic Assessment 1 (Grades I to XII)" },
+    { month: "August 2026", event: "Independence Day & Inter-House Cultural Fest" },
+    { month: "September 2026", event: "Mid-Term (Term 1) Examinations" },
+    { month: "October 2026", event: "Autumn Break & Annual Science & Robotics Expo" },
+    { month: "November 2026", event: "Annual Sports Day Meet & Children's Day Carnival" },
+    { month: "December 2026", event: "Pre-Board I (Grades X & XII) & Winter Break" },
+    { month: "January 2027", event: "Pre-Board II; Annual Day Celebrations" },
+    { month: "February 2027", event: "CBSE Board Practical Examinations" },
+    { month: "March 2027", event: "Annual Term-End Examinations & Result Declaration" },
+  ],
+};

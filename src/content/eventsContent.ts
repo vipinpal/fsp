@@ -1,0 +1,50 @@
+export const eventsContent = {
+  overview: {
+    eyebrow: "School Calendar & Celebrations",
+    title: "Vibrant Happenings & Gatherings",
+    lead: "A rich calendar of scholastic conclaves, cultural milestones, sports tournaments, and parent workshops.",
+  },
+
+  upcomingEvents: [
+    {
+      id: "event-1",
+      title: "Annual Sports Carnival & Athletics Meet 2026",
+      date: "October 18 – 20, 2026",
+      time: "8:30 AM – 3:30 PM",
+      venue: "Main Athletics Ground & Olympic Sports Complex",
+      category: "Sports",
+      description: "A three-day athletic extravaganza featuring track and field, march past, gymnastics drills, and inter-house relays with international sports guests.",
+      registrationRequired: false,
+    },
+    {
+      id: "event-2",
+      title: "GVIS Inter-School Science & AI Conclave",
+      date: "November 12, 2026",
+      time: "9:00 AM – 2:00 PM",
+      venue: "Grand Auditorium & Innovation Labs",
+      category: "Academic",
+      description: "Young innovators from 40 schools demonstrate functioning robotics, IoT automation, and environmental sustainability models.",
+      registrationRequired: true,
+    },
+    {
+      id: "event-3",
+      title: "Winter Grand Musical & Theatre Production",
+      date: "December 22, 2026",
+      time: "5:00 PM – 8:00 PM",
+      venue: "Open-Air Amphitheatre",
+      category: "Cultural",
+      description: "A magnificent Broadway-style theatrical presentation by our senior school drama and orchestra societies.",
+      registrationRequired: true,
+    },
+    {
+      id: "event-4",
+      title: "Parent-Teacher Interactive Symposium",
+      date: "January 16, 2027",
+      time: "9:00 AM – 1:00 PM",
+      venue: "Academic Wings A & B",
+      category: "Parental",
+      description: "One-on-one diagnostic feedback session between subject educators, class mentors, and parents.",
+      registrationRequired: false,
+    },
+  ],
+};

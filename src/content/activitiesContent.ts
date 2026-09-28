@@ -1,0 +1,38 @@
+export const activitiesContent = {
+  overview: {
+    eyebrow: "Holistic Development",
+    title: "Life Beyond the Textbook",
+    lead: "Education at Green Valley extends far beyond lectures. We offer an expansive spectrum of co-curricular clubs, athletics, and cultural societies to ignite each child's innate creativity.",
+  },
+
+  categories: [
+    {
+      id: "sports",
+      title: "Sports & Athletics Academy",
+      description: "Coached by NIS-certified trainers, our athletics program builds resilience, sportsmanship, and tactical thinking.",
+      disciplines: ["Football & Futsal", "Cricket with professional turf nets", "Swimming & Diving", "Lawn Tennis & Table Tennis", "Basketball & Volleyball", "Taekwondo & Self-Defense", "Roller Skating & Athletics"],
+      image: "https://images.unsplash.com/photo-1461896836934-ffe607ba8211?w=800&auto=format&fit=crop&q=80",
+    },
+    {
+      id: "arts",
+      title: "Visual Arts, Sculpture & Pottery",
+      description: "Creative visual arts studios where students experiment with diverse mediums, colors, and clay sculpting.",
+      disciplines: ["Acrylic & Oil on Canvas", "Watercolors & Sketches", "Pottery & Wheel Work", "Origami & Papercraft", "Modern Graphic Design", "Photography & Visual Composition"],
+      image: "https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?w=800&auto=format&fit=crop&q=80",
+    },
+    {
+      id: "music",
+      title: "Music, Dance & Performing Arts",
+      description: "Acoustically engineered sound studios for vocal and instrumental training, alongside Indian classical and Western dance.",
+      disciplines: ["Hindustani Classical Vocal", "Western Choir & Contemporary", "Keyboard, Piano & Guitar", "Drums & Indian Percussion (Tabla)", "Kathak & Bharatanatyam", "Contemporary & Jazz Dance"],
+      image: "https://images.unsplash.com/photo-1511192336575-5a79af67a629?w=800&auto=format&fit=crop&q=80",
+    },
+    {
+      id: "clubs",
+      title: "Student Clubs & Societies",
+      description: "Student-led clubs that cultivate leadership, parliamentary debate, technological prowess, and ecological activism.",
+      disciplines: ["Robotics & AI Innovators Club", "Model United Nations (MUN) Society", "Debate & Public Oratory Club", "Eco-Warriors Environmental Club", "Literary & Editorial Board", "Heritage & Social Service Club"],
+      image: "https://images.unsplash.com/photo-1475721027785-f74eccf877e2?w=800&auto=format&fit=crop&q=80",
+    },
+  ],
+};
