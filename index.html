@@ -12,6 +12,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   </head>
   <body>
+    <!-- Facebook SDK root node — must be the first element inside <body>.
+         Required by the Facebook Page Plugin (XFBML).
+         The SDK script is loaded asynchronously by useFacebookSDK.ts,
+         never blocking page render. -->
+    <div id="fb-root"></div>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>

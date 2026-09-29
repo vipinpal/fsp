@@ -10,6 +10,7 @@ import {
   Drawer,
   List,
   ListItem,
+  ListItemButton,
   ListItemText,
   Collapse,
   Menu,
@@ -330,8 +331,7 @@ export const Header: React.FC = () => {
             <React.Fragment key={item.id}>
               {item.children && item.children.length > 0 ? (
                 <>
-                  <ListItem
-                    button
+                  <ListItemButton
                     onClick={() => toggleMobileSubmenu(item.id)}
                     sx={{ py: 1.25, borderRadius: 1.5 }}
                   >
@@ -340,13 +340,12 @@ export const Header: React.FC = () => {
                       primaryTypographyProps={{ fontWeight: 600, fontSize: '0.95rem' }}
                     />
                     {mobileExpanded[item.id] ? <ChevronDown size={18} /> : <ChevronRight size={18} />}
-                  </ListItem>
+                  </ListItemButton>
                   <Collapse in={Boolean(mobileExpanded[item.id])} timeout="auto" unmountOnExit>
                     <List component="div" disablePadding sx={{ pl: 2, borderLeft: `2px solid ${palette.secondaryLight}` }}>
                       {item.children.map((sub) => (
-                        <ListItem
+                        <ListItemButton
                           key={sub.href}
-                          button
                           component={RouterLink}
                           to={sub.href}
                           onClick={() => setMobileOpen(false)}
@@ -356,14 +355,13 @@ export const Header: React.FC = () => {
                             primary={sub.label}
                             primaryTypographyProps={{ fontSize: '0.875rem', color: palette.textSecondary }}
                           />
-                        </ListItem>
+                        </ListItemButton>
                       ))}
                     </List>
                   </Collapse>
                 </>
               ) : (
-                <ListItem
-                  button
+                <ListItemButton
                   component={RouterLink}
                   to={item.href}
                   onClick={() => setMobileOpen(false)}
@@ -373,7 +371,7 @@ export const Header: React.FC = () => {
                     primary={item.label}
                     primaryTypographyProps={{ fontWeight: 600, fontSize: '0.95rem' }}
                   />
-                </ListItem>
+                </ListItemButton>
               )}
             </React.Fragment>
           ))}

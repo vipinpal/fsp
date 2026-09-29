@@ -1,10 +1,11 @@
 import React from 'react';
-import { Box, Container, Grid, Typography, Card, CardContent } from '@mui/material';
+import { Box, Container, Grid, Typography, Card } from '@mui/material';
 import { Phone, Mail, MapPin, Clock } from 'lucide-react';
 import { PageHero } from '../../components/common/PageHero';
 import { SEOHead } from '../../components/common/SEOHead';
 import { SectionHeader } from '../../components/common/SectionHeader';
 import { EnquiryForm } from '../../components/forms/EnquiryForm';
+import { GoogleMapEmbed } from '../../components/common/GoogleMapEmbed';
 import { schoolConfig } from '../../config/schoolConfig';
 import { schoolThemeConfig } from '../../theme/schoolTheme';
 
@@ -114,6 +115,64 @@ export const ContactPage: React.FC = () => {
               </Card>
             </Grid>
           </Grid>
+        </Container>
+      </Box>
+
+      {/* ── Google Map Section ──────────────────────────────── */}
+      <Box sx={{ py: { xs: 8, md: 10 }, backgroundColor: palette.surfaceAlt }}>
+        <Container maxWidth="xl">
+          <SectionHeader
+            eyebrow="Find Us"
+            title="Our Campus Location"
+            subtitle={`${schoolConfig.address.line1}, ${schoolConfig.address.city} · Landmark: ${schoolConfig.address.landmark}`}
+            align="center"
+          />
+
+          <GoogleMapEmbed
+            height={480}
+            showExternalLink
+            sx={{ mt: 5, maxWidth: 1100, mx: 'auto' }}
+          />
+
+          {/* Quick address chips row */}
+          <Box
+            sx={{
+              mt: 4,
+              display: 'flex',
+              flexWrap: 'wrap',
+              gap: 2,
+              justifyContent: 'center',
+            }}
+          >
+            {[
+              { icon: <MapPin size={15} />, text: `${schoolConfig.address.line1}, ${schoolConfig.address.city} – ${schoolConfig.address.postalCode}` },
+              { icon: <Clock size={15} />, text: schoolConfig.contact.officeHours },
+              { icon: <Phone size={15} />, text: schoolConfig.contact.phone },
+            ].map(({ icon, text }) => (
+              <Box
+                key={text}
+                sx={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: 1,
+                  px: 2.5,
+                  py: 1,
+                  borderRadius: 99,
+                  backgroundColor: 'rgba(255,255,255,0.85)',
+                  border: `1px solid ${palette.borderLight}`,
+                  boxShadow: '0 2px 8px rgba(0,0,0,0.05)',
+                  color: palette.textSecondary,
+                  fontSize: '0.8rem',
+                  fontWeight: 500,
+                }}
+              >
+                <Box sx={{ color: palette.primary, display: 'flex' }}>{icon}</Box>
+                <Typography variant="caption" sx={{ fontWeight: 600, color: palette.textPrimary }}>
+                  {text}
+                </Typography>
+              </Box>
+            ))}
+          </Box>
         </Container>
       </Box>
     </Box>

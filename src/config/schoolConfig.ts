@@ -15,6 +15,7 @@ export interface SchoolAddress {
   country: string;
   postalCode: string;
   googleMapsUrl?: string;
+  googleMapsEmbedUrl?: string;
   landmark?: string;
 }
 
@@ -88,7 +89,8 @@ export const schoolConfig: SchoolConfig = {
     country: "India",
     postalCode: "110078",
     landmark: "Opposite Tech Innovation Center",
-    googleMapsUrl: "https://maps.google.com/?q=New+Delhi",
+    googleMapsUrl: "https://maps.google.com/?q=Sector+14+Knowledge+Parkway+New+Delhi+110078",
+    googleMapsEmbedUrl: "https://maps.google.com/maps?q=Sector+14,+Knowledge+Parkway,+New+Delhi,+Delhi+110078,+India&output=embed&z=15",
   },
   social: {
     facebook: "https://facebook.com/GreenValleyInternationalSchool",

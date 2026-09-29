@@ -11,6 +11,7 @@ import { TestimonialsSection } from '../components/home/TestimonialsSection';
 import { HomeFAQ } from '../components/home/HomeFAQ';
 import { AdmissionCTA } from '../components/home/AdmissionCTA';
 import { SEOHead } from '../components/common/SEOHead';
+import { FacebookSection } from '../components/social/FacebookSection';
 
 export const HomePage: React.FC = () => {
   return (
@@ -27,6 +28,7 @@ export const HomePage: React.FC = () => {
       <AcademicsGrid />
       <AdmissionCTA />
       <HomeGallery />
+      <FacebookSection />
       <TestimonialsSection />
       <HomeFAQ />
     </Box>
