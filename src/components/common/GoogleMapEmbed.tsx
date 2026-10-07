@@ -5,12 +5,20 @@ import { schoolConfig } from '../../config/schoolConfig';
 import { schoolThemeConfig } from '../../theme/schoolTheme';
 
 interface GoogleMapEmbedProps {
+  /** Override embed URL */
+  src?: string;
+  /** Custom map title */
+  title?: string;
   /** Override height (default: 450px) */
   height?: number | string;
   /** Show the "View Larger Map" action button */
   showExternalLink?: boolean;
   /** Additional MUI sx props for the outer Box */
   sx?: object;
+  /** Custom address override for label */
+  locationLabel?: string;
+  /** Custom external link override */
+  externalUrl?: string;
 }
 
 /**
@@ -18,14 +26,19 @@ interface GoogleMapEmbedProps {
  * Falls back to a styled placeholder if no embed URL is configured.
  */
 export const GoogleMapEmbed: React.FC<GoogleMapEmbedProps> = ({
+  src,
+  title,
   height = 450,
   showExternalLink = true,
   sx = {},
+  locationLabel,
+  externalUrl: externalUrlProp,
 }) => {
   const { palette } = schoolThemeConfig;
   const { address } = schoolConfig;
-  const embedUrl = address.googleMapsEmbedUrl;
-  const externalUrl = address.googleMapsUrl ?? 'https://maps.google.com';
+  const embedUrl = src ?? address.googleMapsEmbedUrl;
+  const externalUrl = externalUrlProp ?? address.googleMapsUrl ?? 'https://maps.google.com';
+  const label = locationLabel ?? `${address.line1}, ${address.city}`;
 
   return (
     <Box
@@ -35,6 +48,10 @@ export const GoogleMapEmbed: React.FC<GoogleMapEmbedProps> = ({
         border: `1px solid ${palette.borderLight}`,
         boxShadow: '0 8px 40px rgba(0,0,0,0.08)',
         transition: 'box-shadow 0.3s ease',
+        display: 'flex',
+        flexDirection: 'column',
+        height: '100%',
+        minHeight: height,
         '&:hover': {
           boxShadow: '0 16px 60px rgba(0,0,0,0.12)',
         },
@@ -51,12 +68,17 @@ export const GoogleMapEmbed: React.FC<GoogleMapEmbedProps> = ({
           py: 1.75,
           background: `linear-gradient(135deg, ${palette.primary} 0%, ${palette.primaryDark ?? palette.primary} 100%)`,
           color: '#FFFFFF',
+          flexShrink: 0,
         }}
       >
-        <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.5 }}>
-          <MapPin size={18} />
-          <Typography variant="subtitle2" sx={{ fontWeight: 700, letterSpacing: 0.3 }}>
-            {address.line1}, {address.city}
+        <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.5, minWidth: 0, pr: 1 }}>
+          <MapPin size={18} style={{ flexShrink: 0 }} />
+          <Typography
+            variant="subtitle2"
+            noWrap
+            sx={{ fontWeight: 700, letterSpacing: 0.3 }}
+          >
+            {label}
           </Typography>
         </Box>
 
@@ -78,6 +100,7 @@ export const GoogleMapEmbed: React.FC<GoogleMapEmbedProps> = ({
               fontSize: '0.72rem',
               fontWeight: 600,
               textTransform: 'none',
+              flexShrink: 0,
               '&:hover': {
                 backgroundColor: 'rgba(255,255,255,0.15)',
                 borderColor: '#FFFFFF',
@@ -95,13 +118,15 @@ export const GoogleMapEmbed: React.FC<GoogleMapEmbedProps> = ({
           component="iframe"
           src={embedUrl}
           width="100%"
-          height={height}
+          height="100%"
           loading="lazy"
           referrerPolicy="no-referrer-when-downgrade"
-          title={`Map of ${schoolConfig.name}`}
+          title={title ?? `Map of ${schoolConfig.name}`}
           sx={{
             display: 'block',
             border: 'none',
+            flexGrow: 1,
+            minHeight: typeof height === 'number' ? `${height - 56}px` : height,
           }}
         />
       ) : (
@@ -115,6 +140,7 @@ export const GoogleMapEmbed: React.FC<GoogleMapEmbedProps> = ({
             justifyContent: 'center',
             backgroundColor: palette.surfaceAlt,
             gap: 2,
+            flexGrow: 1,
           }}
         >
           <MapPin size={40} color={palette.primary} />
