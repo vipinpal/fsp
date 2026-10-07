@@ -1,0 +1,121 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 280" width="240" height="280">
+  <defs>
+    <!-- Soft Drop Shadow for cutout feel -->
+    <filter id="cutoutGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="12" stdDeviation="10" flood-color="#30445A" flood-opacity="0.22" />
+      <feDropShadow dx="0" dy="4" stdDeviation="3" flood-color="#FF7A59" flood-opacity="0.3" />
+    </filter>
+    <linearGradient id="capGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFD95A" />
+      <stop offset="100%" stop-color="#FFAA00" />
+    </linearGradient>
+    <linearGradient id="shirtGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#55BCEB" />
+      <stop offset="100%" stop-color="#2D9CDB" />
+    </linearGradient>
+    <linearGradient id="shortsGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#73B95C" />
+      <stop offset="100%" stop-color="#509939" />
+    </linearGradient>
+    <linearGradient id="skinGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFE0CC" />
+      <stop offset="100%" stop-color="#FFCCA8" />
+    </linearGradient>
+  </defs>
+
+  <g filter="url(#cutoutGlow)">
+    <!-- White Sticker Outline for Premium Character Cutout -->
+    <path d="
+      M 120 22
+      C 152 22 178 46 178 78
+      C 178 84 186 92 196 90
+      C 214 86 230 114 216 132
+      C 202 146 182 134 172 130
+      C 170 142 168 160 168 174
+      C 178 184 198 214 186 232
+      C 178 244 154 246 142 232
+      C 134 222 136 200 134 190
+      C 128 190 112 190 106 190
+      C 104 200 106 222 98 232
+      C 86 246 62 244 54 232
+      C 42 214 62 184 72 174
+      C 72 160 70 142 68 130
+      C 58 134 38 146 24 132
+      C 10 114 26 86 44 90
+      C 54 92 62 84 62 78
+      C 62 46 88 22 120 22 Z
+    " fill="#FFFFFF" stroke="#FFF9ED" stroke-width="8" stroke-linejoin="round" />
+
+    <!-- Left Arm & Hand Reaching Up -->
+    <path d="M 72 120 Q 42 102 32 86" stroke="url(#skinGrad)" stroke-width="18" stroke-linecap="round" />
+    <circle cx="28" cy="80" r="13" fill="url(#skinGrad)" />
+    <!-- Sleeve -->
+    <circle cx="70" cy="118" r="13" fill="url(#shirtGrad)" />
+
+    <!-- Right Arm & Hand Waving High Up in Jump -->
+    <path d="M 168 120 Q 198 102 208 86" stroke="url(#skinGrad)" stroke-width="18" stroke-linecap="round" />
+    <circle cx="212" cy="80" r="13" fill="url(#skinGrad)" />
+    <!-- Sleeve -->
+    <circle cx="170" cy="118" r="13" fill="url(#shirtGrad)" />
+
+    <!-- Legs in Mid-Air Jump Spree -->
+    <!-- Left Leg Kicking Back slightly -->
+    <path d="M 96 186 Q 78 206 68 222" stroke="url(#skinGrad)" stroke-width="17" stroke-linecap="round" />
+    <!-- Right Leg Joyfully Bent -->
+    <path d="M 144 186 Q 162 206 172 222" stroke="url(#skinGrad)" stroke-width="17" stroke-linecap="round" />
+
+    <!-- Vibrant Sneakers -->
+    <!-- Left Shoe -->
+    <ellipse cx="62" cy="226" rx="15" ry="10" fill="#FF7A59" transform="rotate(-15 62 226)" />
+    <path d="M 52 232 L 74 228" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" />
+    <!-- Right Shoe -->
+    <ellipse cx="178" cy="226" rx="15" ry="10" fill="#FF7A59" transform="rotate(15 178 226)" />
+    <path d="M 166 228 L 188 232" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" />
+
+    <!-- Shorts -->
+    <path d="M 86 156 L 154 156 L 150 192 L 126 192 L 120 178 L 114 192 L 90 192 Z" fill="url(#shortsGrad)" rx="8" />
+    <!-- Shorts Pocket Detail -->
+    <path d="M 94 168 Q 102 174 108 168" stroke="#FFFFFF" stroke-width="2" fill="none" opacity="0.6" />
+
+    <!-- T-Shirt Body -->
+    <rect x="80" y="106" width="80" height="58" rx="18" fill="url(#shirtGrad)" />
+    <!-- T-Shirt Graphic: Happy Star -->
+    <path d="M 120 120 L 123 128 L 132 129 L 125 135 L 127 143 L 120 138 L 113 143 L 115 135 L 108 129 L 117 128 Z" fill="#FFD95A" />
+
+    <!-- Head & Neck -->
+    <rect x="110" y="94" width="20" height="18" rx="6" fill="url(#skinGrad)" />
+    <circle cx="120" cy="74" r="36" fill="url(#skinGrad)" />
+
+    <!-- Rosy Cheeks -->
+    <circle cx="98" cy="80" r="7" fill="#FF7A59" opacity="0.4" />
+    <circle cx="142" cy="80" r="7" fill="#FF7A59" opacity="0.4" />
+
+    <!-- Happy Eyes & Eyebrows -->
+    <ellipse cx="106" cy="70" rx="4.5" ry="6" fill="#30445A" />
+    <circle cx="108" cy="68" r="2" fill="#FFFFFF" />
+    <ellipse cx="134" cy="70" rx="4.5" ry="6" fill="#30445A" />
+    <circle cx="136" cy="68" r="2" fill="#FFFFFF" />
+
+    <path d="M 101 61 Q 107 57 113 61" stroke="#4A2E16" stroke-width="2.5" stroke-linecap="round" fill="none" />
+    <path d="M 127 61 Q 133 57 139 61" stroke="#4A2E16" stroke-width="2.5" stroke-linecap="round" fill="none" />
+
+    <!-- Big Joyful Open Smile -->
+    <path d="M 108 82 Q 120 98 132 82 Z" fill="#D32F2F" />
+    <path d="M 112 83 Q 120 87 128 83" fill="#FFFFFF" />
+
+    <!-- Hair (Sides) -->
+    <path d="M 84 68 C 84 48 94 40 120 40 C 146 40 156 48 156 68 Z" fill="#5D3A1A" />
+
+    <!-- Playful Turned Cap (Yellow Sunshine) -->
+    <path d="M 80 58 Q 120 32 160 58 Q 120 50 80 58 Z" fill="url(#capGrad)" />
+    <path d="M 84 54 C 84 34 100 24 120 24 C 140 24 156 34 156 54 Z" fill="url(#capGrad)" />
+    <!-- Cap Visor turned to the side -->
+    <path d="M 148 50 Q 182 46 186 58 Q 158 64 144 56 Z" fill="#FFAA00" />
+    <!-- Cap Top Button -->
+    <circle cx="120" cy="24" r="4.5" fill="#FF7A59" />
+
+    <!-- Jump Sparkles Around Character -->
+    <path d="M 40 40 L 44 48 L 52 50 L 45 56 L 47 64 L 40 59 L 33 64 L 35 56 L 28 50 L 36 48 Z" fill="#FFD95A" opacity="0.9" />
+    <path d="M 198 150 L 201 156 L 208 157 L 203 162 L 204 168 L 198 165 L 192 168 L 194 162 L 189 157 L 195 156 Z" fill="#69D7C4" opacity="0.9" />
+  </g>
+</svg>

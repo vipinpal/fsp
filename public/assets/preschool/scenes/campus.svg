@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="1600" height="900" preserveAspectRatio="xMidYMid slice">
+    <defs>
+      <linearGradient id="g_campus" x1="0%" y1="0%" x2="0%" y2="100%">
+        <stop offset="0%" stop-color="#E0F7FA" />
+        <stop offset="100%" stop-color="#FFFDE7" />
+      </linearGradient>
+    </defs>
+    <rect width="1600" height="900" fill="url(#g_campus)" />
+    <circle cx="1400" cy="180" r="140" fill="#FFD95A" fill-opacity="0.3" />
+    <path d="M-100,750 Q400,600 900,780 T1800,700 L1800,900 L-100,900 Z" fill="#73B95C" fill-opacity="0.15" />
+    <path d="M-100,800 Q500,680 1100,820 T1800,760 L1800,900 L-100,900 Z" fill="#69D7C4" fill-opacity="0.2" />
+  </svg>

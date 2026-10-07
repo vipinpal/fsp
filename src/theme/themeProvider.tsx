@@ -1,9 +1,11 @@
 import React from 'react';
 import { createTheme, ThemeProvider as MuiThemeProvider, CssBaseline } from '@mui/material';
-import { schoolThemeConfig } from './schoolTheme';
+import { schoolThemeConfig, SchoolThemeConfig } from './schoolTheme';
+import { preschoolThemeConfig } from './preschoolTheme';
+import { siteConfig } from '../config/site.config';
 
-export const createAppTheme = () => {
-  const { palette, typography, borderRadius, shadows } = schoolThemeConfig;
+export const createAppTheme = (config: SchoolThemeConfig = siteConfig.siteType === 'preschool' ? preschoolThemeConfig : schoolThemeConfig) => {
+  const { palette, typography, borderRadius, shadows } = config;
 
   return createTheme({
     palette: {
@@ -86,7 +88,7 @@ export const createAppTheme = () => {
       },
       button: {
         textTransform: 'none',
-        fontWeight: 600,
+        fontWeight: 700,
         fontFamily: typography.fontFamilyHeading,
       },
     },
@@ -97,21 +99,21 @@ export const createAppTheme = () => {
       MuiButton: {
         styleOverrides: {
           root: {
-            borderRadius: borderRadius.small,
-            padding: '10px 24px',
+            borderRadius: borderRadius.pill,
+            padding: '12px 28px',
             boxShadow: 'none',
-            fontSize: '0.95rem',
-            transition: 'all 0.25s ease-in-out',
+            fontSize: '1rem',
+            transition: 'all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1)',
             '&:hover': {
-              boxShadow: '0 6px 16px rgba(15, 61, 62, 0.2)',
-              transform: 'translateY(-1px)',
+              boxShadow: shadows.cardHover,
+              transform: 'translateY(-2px) scale(1.02)',
             },
           },
           containedPrimary: {
             backgroundColor: palette.primary,
             color: palette.primaryContrast,
             '&:hover': {
-              backgroundColor: palette.primaryLight,
+              backgroundColor: palette.primaryDark,
             },
           },
           containedSecondary: {
@@ -124,9 +126,9 @@ export const createAppTheme = () => {
             },
           },
           outlined: {
-            borderWidth: '1.5px',
+            borderWidth: '2px',
             '&:hover': {
-              borderWidth: '1.5px',
+              borderWidth: '2px',
             },
           },
         },
@@ -134,12 +136,13 @@ export const createAppTheme = () => {
       MuiCard: {
         styleOverrides: {
           root: {
-            borderRadius: borderRadius.medium,
+            borderRadius: borderRadius.large,
             boxShadow: shadows.card,
-            border: `1px solid ${palette.borderLight}`,
-            transition: 'all 0.3s ease',
+            border: `1.5px solid ${palette.border}`,
+            transition: 'all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1)',
             '&:hover': {
               boxShadow: shadows.cardHover,
+              transform: 'translateY(-4px)',
             },
           },
         },
@@ -149,14 +152,14 @@ export const createAppTheme = () => {
           root: {
             backgroundColor: palette.surface,
             color: palette.textPrimary,
-            boxShadow: '0 2px 12px rgba(0,0,0,0.06)',
+            boxShadow: '0 4px 20px rgba(0,0,0,0.04)',
           },
         },
       },
       MuiChip: {
         styleOverrides: {
           root: {
-            fontWeight: 600,
+            fontWeight: 700,
             borderRadius: borderRadius.pill,
           },
         },
