@@ -13,18 +13,18 @@ export interface HeroConfig {
 
 export const heroConfig: HeroConfig = {
   badgeText: '☀️ Admissions Open for 2026–2027 Academic Year',
-  headlineMain: 'Where Little Minds',
-  headlineHighlight: 'Grow, Play & Explore',
-  subtitle: 'A warm, safe, and joyful haven where curiosity blooms through play-based learning, compassionate mentorship, and creative discovery.',
+  headlineMain: 'Little Wings Care',
+  headlineHighlight: 'The Rising Sun',
+  subtitle: 'A nurturing preschool in Amroha where young children learn through play, exploration, and caring guidance.',
   primaryCtaText: '🎒 Book a School Visit',
   primaryCtaLink: '#admission-form',
   secondaryCtaText: '🎨 Explore Our Programs',
   secondaryCtaLink: '#programs',
-  whatsappMessage: 'Hello Little Learners! I would like to book a campus tour and inquire about preschool admissions.',
+  whatsappMessage: 'Hello Little Wings Care School, I would like to enquire about preschool admission.',
   stats: [
-    { label: 'Happy Learners', value: '1,200+', icon: 'Smile' },
-    { label: 'Caring Teachers', value: '45+', icon: 'Heart' },
-    { label: 'Safety Index', value: '100%', icon: 'ShieldCheck' },
-    { label: 'Play & Creative Zones', value: '12+', icon: 'Sparkles' },
+    { label: 'Classes', value: '4', icon: 'Smile' },
+    { label: 'Teacher-Student Ratio', value: '1:10', icon: 'Heart' },
+    { label: 'Nursery Eligibility', value: '3+', icon: 'BookOpen' },
+    { label: 'Learning', value: 'Activity Based', icon: 'Sparkles' },
   ],
 };

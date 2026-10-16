@@ -9,9 +9,9 @@ export interface AdmissionFormConfig {
 
 export const admissionConfig: AdmissionFormConfig = {
   title: "Let's Start Their Little Adventure",
-  subtitle: 'Fill out this quick form to schedule a campus tour or receive our 2026–2027 preschool prospectus.',
-  ageOptions: ['1.5 – 2 Years', '2 – 3 Years (Playgroup)', '3 – 4 Years (Nursery)', '4 – 5 Years (LKG)', '5 – 6 Years (UKG)'],
-  programOptions: ['Playgroup', 'Nursery', 'LKG (Lower Kindergarten)', 'UKG (Upper Kindergarten)', 'Day Care & After School'],
+  subtitle: 'Contact us to enquire about admission or arrange a visit to Little Wings Care School.',
+  ageOptions: ['Pre-Nursery (please enquire)', 'Nursery (3+ years)', 'Junior KG / LKG (4+ years)', 'Senior KG / UKG (5+ years)'],
+  programOptions: ['Pre-Nursery', 'Nursery', 'LKG (Junior KG)', 'UKG (Senior KG)'],
   successTitle: '🎒 Enquiry Submitted Successfully!',
-  successMessage: 'Thank you! Our admissions coordinator will reach out within 2 hours to confirm your school visit.',
+  successMessage: 'Thank you for contacting Little Wings Care School. We will get back to you soon.',
 };

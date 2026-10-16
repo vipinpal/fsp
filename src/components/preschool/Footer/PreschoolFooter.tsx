@@ -1,7 +1,9 @@
 import React from 'react';
 import { Box, Container, Typography, Grid, IconButton } from '@mui/material';
-import { Sparkles, Phone, Mail, MapPin, MessageCircle } from 'lucide-react';
+import { Phone, Mail, MapPin, MessageCircle, AtSign } from 'lucide-react';
 import { siteConfig } from '../../../config/site.config';
+import { programsConfig } from '../../../config/preschool/programs.config';
+import { SchoolProfileSection } from '../About/SchoolProfileSection';
 import { FacebookIcon, InstagramIcon, YoutubeIcon } from '../../common/BrandIcons';
 
 export const PreschoolFooter: React.FC = () => {
@@ -14,24 +16,20 @@ export const PreschoolFooter: React.FC = () => {
         </svg>
       </Box>
 
+      <SchoolProfileSection />
+
       <Container maxWidth="lg">
+        <Box sx={{ mt: { xs: 2, md: 3 }, pt: { xs: 4, md: 5 }, borderTop: '1px solid rgba(255,255,255,0.2)' }}>
         <Grid container spacing={4} sx={{ mb: 6 }}>
           {/* Col 1: Logo & Tagline */}
           <Grid item xs={12} md={4}>
             <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.5, mb: 2 }}>
               <Box
-                sx={{
-                  width: 44,
-                  height: 44,
-                  borderRadius: '50%',
-                  bgcolor: '#FF6B6B',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                }}
-              >
-                <Sparkles size={22} color="#FFFFFF" />
-              </Box>
+                component="img"
+                src={siteConfig.logo}
+                alt={`${siteConfig.name} emblem`}
+                sx={{ width: 52, height: 52, objectFit: 'contain', flexShrink: 0 }}
+              />
               <Typography variant="h5" sx={{ fontFamily: "'Fredoka', sans-serif", fontWeight: 700, color: '#FFFFFF' }}>
                 {siteConfig.shortName}
               </Typography>
@@ -48,6 +46,9 @@ export const PreschoolFooter: React.FC = () => {
               <IconButton component="a" href={siteConfig.social.instagram} target="_blank" sx={{ bgcolor: 'rgba(255,255,255,0.1)', color: '#FFFFFF', '&:hover': { bgcolor: '#4ECDC4' } }}>
                 <InstagramIcon size={18} color="#FFFFFF" />
               </IconButton>
+              <IconButton component="a" href={siteConfig.social.threads} target="_blank" rel="noopener noreferrer" aria-label="Threads" sx={{ bgcolor: 'rgba(255,255,255,0.1)', color: '#FFFFFF', '&:hover': { bgcolor: '#4ECDC4' } }}>
+                <AtSign size={18} />
+              </IconButton>
               <IconButton component="a" href={siteConfig.social.youtube} target="_blank" sx={{ bgcolor: 'rgba(255,255,255,0.1)', color: '#FFFFFF', '&:hover': { bgcolor: '#FF5252' } }}>
                 <YoutubeIcon size={18} color="#FFFFFF" />
               </IconButton>
@@ -60,7 +61,7 @@ export const PreschoolFooter: React.FC = () => {
               Quick Links
             </Typography>
             <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1.2 }}>
-              {['Home', 'Why Us', 'Programs', 'Activities', 'Campus', 'Gallery', 'Contact'].map((item) => (
+              {['Home', 'About Us', 'Why Us', 'Programs', 'Activities', 'Campus', 'Gallery', 'Contact'].map((item) => (
                 <Box
                   key={item}
                   component="a"
@@ -86,9 +87,9 @@ export const PreschoolFooter: React.FC = () => {
               Programs
             </Typography>
             <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1.2 }}>
-              {['Playgroup (2-3Y)', 'Nursery (3-4Y)', 'LKG (4-5Y)', 'UKG (5-6Y)', 'Day Care'].map((prog) => (
+              {programsConfig.map((program) => (
                 <Box
-                  key={prog}
+                  key={program.id}
                   component="a"
                   href="#programs"
                   sx={{
@@ -100,7 +101,7 @@ export const PreschoolFooter: React.FC = () => {
                     '&:hover': { color: '#4ECDC4' },
                   }}
                 >
-                  {prog}
+                  {program.title}
                 </Box>
               ))}
             </Box>
@@ -131,6 +132,7 @@ export const PreschoolFooter: React.FC = () => {
             </Box>
           </Grid>
         </Grid>
+        </Box>
 
         <Box
           sx={{

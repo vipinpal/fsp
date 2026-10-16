@@ -2,6 +2,7 @@ import React from 'react';
 import { Box, Container, Typography, Grid, Paper, Button } from '@mui/material';
 import { MapPin, Phone, Mail, Clock, Navigation } from 'lucide-react';
 import { siteConfig } from '../../../config/site.config';
+import { preschoolPalette } from '../../../config/preschoolTheme.palette';
 import { GoogleMapEmbed } from '../../common/GoogleMapEmbed';
 
 export const VisitUsSection: React.FC = () => {
@@ -128,7 +129,7 @@ export const VisitUsSection: React.FC = () => {
                         Visiting Hours
                       </Typography>
                       <Typography variant="body2" sx={{ fontFamily: "'Plus Jakarta Sans', sans-serif", color: '#546E7A' }}>
-                        Mon – Sat: 8:30 AM – 3:30 PM
+                        Mon – Sat: 8:00 AM – 3:00 PM
                       </Typography>
                     </Box>
                   </Box>
@@ -167,15 +168,18 @@ export const VisitUsSection: React.FC = () => {
                 borderRadius: '32px',
                 overflow: 'hidden',
                 height: '100%',
-                minHeight: 400,
+                minHeight: { xs: 450, md: 520 },
+                display: 'flex',
                 border: '3px solid #FFFFFF',
-                boxShadow: '0 24px 48px rgba(44, 62, 80, 0.1)',
+                boxShadow: '0 20px 44px rgba(44, 62, 80, 0.12)',
               }}
             >
               <GoogleMapEmbed
                 src={siteConfig.address.googleMapsEmbedUrl}
                 title="Little Learners Preschool Location"
-                height="100%"
+                height={430}
+                headerBackground={`linear-gradient(135deg, ${preschoolPalette.coral} 0%, ${preschoolPalette.coralLight} 100%)`}
+                sx={{ height: '100%', minHeight: '100%', border: 'none', borderRadius: 0, boxShadow: 'none', '&:hover': { boxShadow: 'none' } }}
                 locationLabel={`${siteConfig.address.line1}, ${siteConfig.address.city}`}
                 externalUrl={siteConfig.address.googleMapsDirectionsUrl}
               />

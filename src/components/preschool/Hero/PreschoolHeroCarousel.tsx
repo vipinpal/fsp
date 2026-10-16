@@ -24,16 +24,16 @@ const preschoolSlides: PreschoolSlide[] = [
     headlineMain: 'Where Little Minds',
     headlineHighlight: 'Grow, Play & Explore',
     subtitle: 'A warm, joyful sanctuary where early childhood curiosity blossoms into deep learning through purposeful play.',
-    image: 'https://images.unsplash.com/photo-1577896851231-70ef18881754?auto=format&fit=crop&w=1600&q=80',
+    image: '/assets/preschool/hero/little-wings-care-school-hero.webp',
     themeColor: preschoolPalette.primaryBlue,
   },
   {
     id: 'slide-2',
-    badge: '🎨 CREATIVE ARTS & SENSORY LABS',
-    headlineMain: 'Nurturing Hands-On',
-    headlineHighlight: 'Curiosity & Wonder',
-    subtitle: 'From messy finger painting to clay sculpting, children discover the magic of self-expression in inspiring art studios.',
-    image: 'https://images.unsplash.com/photo-1502086223501-7ea6ecd79368?auto=format&fit=crop&w=1600&q=80',
+    badge: '',
+    headlineMain: '',
+    headlineHighlight: '',
+    subtitle: '',
+    image: '/assets/preschool/hero/little_wings_care_school_hero_01.webp',
     themeColor: preschoolPalette.coral,
   },
   {
@@ -113,7 +113,10 @@ export const PreschoolHeroCarousel: React.FC = () => {
           sx={{
             position: 'absolute',
             inset: 0,
-            backgroundImage: `linear-gradient(135deg, rgba(48, 68, 90, 0.88) 0%, rgba(48, 68, 90, 0.65) 55%, rgba(48, 68, 90, 0.45) 100%), url(${slide.image})`,
+            backgroundImage: idx === 1
+              ? 'none'
+              : `linear-gradient(135deg, rgba(48, 68, 90, 0.88) 0%, rgba(48, 68, 90, 0.65) 55%, rgba(48, 68, 90, 0.45) 100%), url(${slide.image})`,
+            bgcolor: idx === 1 ? '#DDF5FC' : 'transparent',
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             opacity: idx === currentIndex ? 1 : 0,
@@ -123,7 +126,25 @@ export const PreschoolHeroCarousel: React.FC = () => {
         />
       ))}
 
+      {currentIndex === 1 && (
+        <Box
+          component="img"
+          src={current.image}
+          alt="Little Wings Care School preschool admissions hero artwork"
+          sx={{
+            position: 'absolute',
+            inset: 0,
+            width: '100%',
+            height: '100%',
+            objectFit: 'contain',
+            objectPosition: 'center',
+            zIndex: 2,
+          }}
+        />
+      )}
+
       {/* Hero Foreground Content */}
+  {currentIndex !== 1 && (
       <Container
         maxWidth="lg"
         sx={{
@@ -327,6 +348,7 @@ export const PreschoolHeroCarousel: React.FC = () => {
           </Box>
         </Box>
       </Container>
+      )}
 
       {/* Carousel Navigation Arrow Buttons */}
       <IconButton

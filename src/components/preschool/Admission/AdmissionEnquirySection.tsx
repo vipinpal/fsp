@@ -72,16 +72,8 @@ export const AdmissionEnquirySection: React.FC = () => {
     }, 1200);
   };
 
-  return (
-    <SectionDecoration
-      sceneKey="admission"
-      overlayColor="rgba(255, 245, 230, 0.7)"
-      floatingObjects={[
-        { objectKey: 'balloon', size: 60, style: { top: '15%', right: '8%' } },
-      ]}
-      bridgeType="organicWave"
-    >
-      <Box id="admission-form" sx={{ py: { xs: 8, md: 12 }, position: 'relative', zIndex: 2 }}>
+  const content = (
+      <Box id="admission-form" sx={{ py: { xs: 8, md: 12 }, position: 'relative', zIndex: 2, width: '100%' }}>
         <Container maxWidth="md">
           <Paper
             elevation={0}
@@ -95,7 +87,7 @@ export const AdmissionEnquirySection: React.FC = () => {
               overflow: 'hidden',
             }}
           >
-            <Box sx={{ textAlign: 'center', mb: 5 }}>
+              <Box sx={{ textAlign: 'center', mb: 5 }}>
               <Typography
                 variant="overline"
                 sx={{
@@ -126,6 +118,7 @@ export const AdmissionEnquirySection: React.FC = () => {
                   fontFamily: "'Plus Jakarta Sans', sans-serif",
                   color: '#546E7A',
                   mt: 1.5,
+                  lineHeight: 1.65,
                 }}
               >
                 {admissionConfig.subtitle}
@@ -342,6 +335,18 @@ export const AdmissionEnquirySection: React.FC = () => {
           </Paper>
         </Container>
       </Box>
+  );
+
+  return (
+    <SectionDecoration
+      sceneKey="admission"
+      overlayColor="rgba(255, 245, 230, 0.7)"
+      floatingObjects={[
+        { objectKey: 'balloon', size: 60, style: { top: '15%', right: '8%' } },
+      ]}
+      bridgeType="organicWave"
+    >
+      {content}
     </SectionDecoration>
   );
 };

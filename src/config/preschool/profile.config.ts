@@ -1,0 +1,65 @@
+export const preschoolProfile = {
+  quote: 'The whole purpose of education is to turn windows into mirrors.',
+  overview: 'Little Wings Care School - The Rising Sun - is a preschool in Amroha devoted to nurturing young children with care, curiosity, and trust. Our learning environment encourages every child to explore their potential and grow through meaningful experiences.',
+  overviewDetail: 'A child’s development has many dimensions: physical, mental, intellectual, career, emotional, social, spiritual, and national. We believe every child has immense power within and the potential to do great things.',
+  potentialQuote: 'Every child has immense power within - an infinite potential. They can do anything and everything.',
+  potentialAttribution: 'Swami Vivekanand',
+  mission: 'We aspire to witness the many firsts each child accomplishes, from their first time away from home to a school performance or first attempt at reading. We provide a safe, welcoming environment where children are free to explore and grow across physical, intellectual, emotional, social, and spiritual dimensions.',
+  missionClosing: 'The greatest gifts you can give your children are the roots of responsibility and the wings of independence.',
+  developmentAreas: [
+    { title: 'Physical', icon: 'Activity', color: '#FF7A59' },
+    { title: 'Mental', icon: 'Brain', color: '#55BCEB' },
+    { title: 'Intellectual', icon: 'Lightbulb', color: '#73B95C' },
+    { title: 'Career', icon: 'BriefcaseBusiness', color: '#A994E8' },
+    { title: 'Emotional', icon: 'Heart', color: '#FF7A59' },
+    { title: 'Social', icon: 'UsersRound', color: '#69D7C4' },
+    { title: 'Spiritual', icon: 'Sparkles', color: '#A994E8' },
+    { title: 'National', icon: 'Flag', color: '#55BCEB' },
+  ],
+  conceptActivities: [
+    'Social and Environmental Science',
+    'Nature Walks',
+    'Numeracy',
+    'Matching, Naming, and Classifying',
+    'Identifying',
+    'Sequencing',
+    'Puzzles, Riddles, and Mazes',
+  ],
+  annualEvents: [
+    {
+      title: 'Parent Participation Programs',
+      description: 'Families join school activities and share in their child’s learning journey.',
+      icon: 'UsersRound',
+    },
+    {
+      title: 'Phonics Workshops',
+      description: 'Playful sound and letter activities help children build early language confidence.',
+      icon: 'BookOpen',
+    },
+    {
+      title: 'Children’s Field Trips',
+      description: 'Guided outings connect classroom themes with places, people, and the world around us.',
+      icon: 'MapPin',
+    },
+    {
+      title: 'Annual Sports Day',
+      description: 'A joyful celebration of movement, teamwork, participation, and effort.',
+      icon: 'Trophy',
+    },
+    {
+      title: 'Annual Day & Graduation',
+      description: 'Children take the stage to share their learning and celebrate their next step.',
+      icon: 'GraduationCap',
+    },
+    {
+      title: 'Indian Festival Celebrations',
+      description: 'Children discover the stories, traditions, and values behind major Indian festivals.',
+      icon: 'PartyPopper',
+    },
+    {
+      title: 'Birthday Celebrations',
+      description: 'Each child is celebrated as a valued part of the school community.',
+      icon: 'Cake',
+    },
+  ],
+};

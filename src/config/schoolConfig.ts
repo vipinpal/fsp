@@ -40,7 +40,7 @@ export interface SchoolConfig {
   name: string;
   shortName: string;
   tagline: string;
-  establishedYear: number;
+  establishedYear?: number;
   board: string;
   classes: string;
   mediumOfInstruction: string;
@@ -61,50 +61,48 @@ export interface SchoolConfig {
 }
 
 export const schoolConfig: SchoolConfig = {
-  id: "green-valley-international",
-  name: "Green Valley International School",
-  shortName: "GVIS",
-  tagline: "Learning Today. Leading Tomorrow.",
-  establishedYear: 2010,
-  board: "CBSE (Central Board of Secondary Education)",
-  classes: "Pre-Nursery to Grade XII",
+  id: "little-wings-care-school",
+  name: "Little Wings Care School",
+  shortName: "LWCS",
+  tagline: "The Rising Sun",
+  board: "Preschool",
+  classes: "Pre-Nursery, Nursery, LKG, UKG",
   mediumOfInstruction: "English",
-  studentTeacherRatio: "18:1",
-  schoolType: "Co-Educational Day-cum-Boarding School",
-  logo: "/branding/logo.svg",
-  favicon: "/branding/logo.svg",
+  studentTeacherRatio: "1:10",
+  schoolType: "Preschool",
+  logo: "/branding/little_wings_care_school_emblem.webp",
+  favicon: "/branding/little-wings-care-school-favicon.ico",
   contact: {
-    phone: "+91-11-2856-7890",
-    phoneAlt: "+91-98765-43210",
-    email: "info@greenvalley.edu.in",
-    admissionEmail: "admissions@greenvalley.edu.in",
-    principalEmail: "principal@greenvalley.edu.in",
-    officeHours: "Monday to Saturday: 8:00 AM – 4:00 PM",
+    phone: "+91-94585-25278",
+    phoneAlt: "+91-76176-87708",
+    email: "littlewingsamroha@gmail.com",
+    admissionEmail: "littlewingsamroha@gmail.com",
+    officeHours: "Please contact the school for timings",
   },
   address: {
-    line1: "Sector 14, Knowledge Parkway",
-    line2: "Near Institutional Hub",
-    city: "New Delhi",
-    state: "Delhi",
+    line1: "Joya Road",
+    line2: "Opp. Jeevan Jyoti Hospital",
+    city: "Amroha",
+    state: "Uttar Pradesh",
     country: "India",
-    postalCode: "110078",
-    landmark: "Opposite Tech Innovation Center",
-    googleMapsUrl: "https://maps.google.com/?q=Sector+14+Knowledge+Parkway+New+Delhi+110078",
-    googleMapsEmbedUrl: "https://maps.google.com/maps?q=Sector+14,+Knowledge+Parkway,+New+Delhi,+Delhi+110078,+India&output=embed&z=15",
+    postalCode: "244221",
+    landmark: "Opp. Jeevan Jyoti Hospital",
+    googleMapsUrl: "https://www.google.com/maps/dir/?api=1&destination=28.87444843597763%2C78.47188174719916",
+    googleMapsEmbedUrl: "https://maps.google.com/maps?q=28.87444843597763,78.47188174719916&output=embed&z=17",
   },
   social: {
-    facebook: "https://facebook.com/GreenValleyInternationalSchool",
-    instagram: "https://instagram.com/GreenValleySchool",
-    youtube: "https://youtube.com/@GreenValleySchool",
-    linkedin: "https://linkedin.com/company/green-valley-international-school",
-    twitter: "https://twitter.com/GVISDelhi",
+    facebook: "",
+    instagram: "",
+    youtube: "",
+    linkedin: "",
+    twitter: "",
   },
   affiliation: {
-    board: "CBSE, New Delhi",
-    affiliationNumber: "CBSE/AFF/2130987",
-    schoolCode: "84021",
-    status: "Provisional Affiliation up to Senior Secondary Level",
-    validUpto: "31/03/2029",
+    board: "Not applicable",
+    affiliationNumber: "Not applicable",
+    schoolCode: "Not applicable",
+    status: "Preschool",
+    validUpto: "Not applicable",
   },
   features: {
     enableAdmissionsMarquee: true,

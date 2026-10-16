@@ -9,6 +9,8 @@ interface GoogleMapEmbedProps {
   src?: string;
   /** Custom map title */
   title?: string;
+  /** Optional map toolbar background override */
+  headerBackground?: string;
   /** Override height (default: 450px) */
   height?: number | string;
   /** Show the "View Larger Map" action button */
@@ -28,6 +30,7 @@ interface GoogleMapEmbedProps {
 export const GoogleMapEmbed: React.FC<GoogleMapEmbedProps> = ({
   src,
   title,
+  headerBackground,
   height = 450,
   showExternalLink = true,
   sx = {},
@@ -50,6 +53,9 @@ export const GoogleMapEmbed: React.FC<GoogleMapEmbedProps> = ({
         transition: 'box-shadow 0.3s ease',
         display: 'flex',
         flexDirection: 'column',
+        flex: '1 1 auto',
+        width: '100%',
+        minWidth: 0,
         height: '100%',
         minHeight: height,
         '&:hover': {
@@ -66,7 +72,7 @@ export const GoogleMapEmbed: React.FC<GoogleMapEmbedProps> = ({
           justifyContent: 'space-between',
           px: 3,
           py: 1.75,
-          background: `linear-gradient(135deg, ${palette.primary} 0%, ${palette.primaryDark ?? palette.primary} 100%)`,
+          background: headerBackground ?? `linear-gradient(135deg, ${palette.primary} 0%, ${palette.primaryDark ?? palette.primary} 100%)`,
           color: '#FFFFFF',
           flexShrink: 0,
         }}

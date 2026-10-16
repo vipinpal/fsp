@@ -5,6 +5,7 @@ import { schoolConfig } from '../../config/schoolConfig';
 interface SEOHeadProps {
   title?: string;
   description?: string;
+  keywords?: string[];
   canonicalPath?: string;
   ogImage?: string;
 }
@@ -12,13 +13,16 @@ interface SEOHeadProps {
 export const SEOHead: React.FC<SEOHeadProps> = ({
   title,
   description = seoConfig.defaultDescription,
+  keywords = seoConfig.keywords,
   canonicalPath = '',
   ogImage = seoConfig.defaultOgImage,
 }) => {
   const fullTitle = title
     ? `${title} | ${schoolConfig.name}`
     : seoConfig.defaultTitle;
-  const canonicalUrl = `${seoConfig.siteUrl}${canonicalPath}`;
+  const siteUrl = seoConfig.siteUrl || window.location.origin;
+  const canonicalUrl = new URL(canonicalPath || window.location.pathname, siteUrl).toString();
+  const keywordContent = keywords.join(', ');
 
   useEffect(() => {
     // Dynamically update document head tags in browser
@@ -32,6 +36,14 @@ export const SEOHead: React.FC<SEOHeadProps> = ({
       document.head.appendChild(metaDesc);
     }
     metaDesc.setAttribute('content', description);
+
+    let metaKeywords = document.querySelector("meta[name='keywords']");
+    if (!metaKeywords) {
+      metaKeywords = document.createElement('meta');
+      metaKeywords.setAttribute('name', 'keywords');
+      document.head.appendChild(metaKeywords);
+    }
+    metaKeywords.setAttribute('content', keywordContent);
 
     // OpenGraph Title
     let ogTitle = document.querySelector("meta[property='og:title']");
@@ -76,8 +88,12 @@ export const SEOHead: React.FC<SEOHeadProps> = ({
       scriptTag.setAttribute('type', 'application/ld+json');
       document.head.appendChild(scriptTag);
     }
-    scriptTag.textContent = JSON.stringify(seoConfig.organizationSchema);
-  }, [fullTitle, description, canonicalUrl, ogImage]);
+    scriptTag.textContent = JSON.stringify({
+      ...seoConfig.organizationSchema,
+      url: siteUrl,
+      logo: new URL(schoolConfig.logo, siteUrl).toString(),
+    });
+  }, [fullTitle, description, keywordContent, canonicalUrl, ogImage]);
 
   return null;
 };

@@ -12,11 +12,19 @@ import {
   ListItem,
   ListItemButton,
   ListItemText,
+  Tooltip,
   useTheme,
   useMediaQuery,
 } from '@mui/material';
-import { Menu as MenuIcon, X as CloseIcon, Phone, MessageCircle, MapPin, Sparkles } from 'lucide-react';
+import { Menu as MenuIcon, X as CloseIcon, Phone, MessageCircle, MapPin, AtSign } from 'lucide-react';
 import { siteConfig } from '../../../config/site.config';
+import { FacebookIcon, InstagramIcon } from '../../common/BrandIcons';
+
+const socialLinks = [
+  { label: 'Instagram', href: siteConfig.social.instagram, icon: <InstagramIcon size={17} /> },
+  { label: 'Facebook', href: siteConfig.social.facebook, icon: <FacebookIcon size={16} /> },
+  { label: 'Threads', href: siteConfig.social.threads, icon: <AtSign size={17} /> },
+].filter((link) => link.href);
 
 export const PreschoolHeader: React.FC = () => {
   const theme = useTheme();
@@ -74,12 +82,30 @@ export const PreschoolHeader: React.FC = () => {
                 <span>{siteConfig.phone}</span>
               </Box>
             </Box>
-            <Box sx={{ display: 'flex', gap: 2, alignItems: 'center' }}>
+            <Box sx={{ display: 'flex', gap: 1, alignItems: 'center' }}>
+              <Box sx={{ display: { xs: 'none', md: 'flex' }, alignItems: 'center', gap: 0.25 }}>
+                {socialLinks.map((link) => (
+                  <Tooltip title={link.label} key={link.label}>
+                    <IconButton
+                      component="a"
+                      href={link.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={`Visit our ${link.label} page`}
+                      size="small"
+                      sx={{ width: 30, height: 30, color: '#2C3E50', '&:hover': { bgcolor: '#FFE4E1', color: '#FF6B6B' } }}
+                    >
+                      {link.icon}
+                    </IconButton>
+                  </Tooltip>
+                ))}
+              </Box>
               <Box
                 component="a"
                 href={`https://wa.me/${siteConfig.whatsappPhone}`}
                 target="_blank"
                 rel="noreferrer"
+                aria-label="WhatsApp admissions"
                 sx={{
                   display: 'flex',
                   alignItems: 'center',
@@ -118,25 +144,16 @@ export const PreschoolHeader: React.FC = () => {
               sx={{
                 display: 'flex',
                 alignItems: 'center',
-                gap: 1.5,
+                  gap: 1.5,
                 textDecoration: 'none',
               }}
             >
               <Box
-                sx={{
-                  width: 46,
-                  height: 46,
-                  borderRadius: '50%',
-                  bgcolor: '#FF6B6B',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  boxShadow: '0 6px 16px rgba(255, 107, 107, 0.3)',
-                  transform: 'rotate(-5deg)',
-                }}
-              >
-                <Sparkles size={24} color="#FFFFFF" />
-              </Box>
+                component="img"
+                src={siteConfig.logo}
+                alt={`${siteConfig.name} emblem`}
+                sx={{ width: 56, height: 56, objectFit: 'contain', flexShrink: 0 }}
+              />
               <Box>
                 <Typography
                   variant="h6"
@@ -145,10 +162,10 @@ export const PreschoolHeader: React.FC = () => {
                     fontWeight: 700,
                     color: '#FF6B6B',
                     lineHeight: 1.1,
-                    fontSize: { xs: '1.25rem', md: '1.45rem' },
+                    fontSize: { xs: '1rem', sm: '1.25rem', md: '1rem' },
                   }}
                 >
-                  Little Learners
+                  {siteConfig.name}
                 </Typography>
                 <Typography
                   variant="caption"
@@ -161,7 +178,7 @@ export const PreschoolHeader: React.FC = () => {
                     textTransform: 'uppercase',
                   }}
                 >
-                  Preschool & Early World
+                  {siteConfig.tagline}
                 </Typography>
               </Box>
             </Box>
@@ -275,6 +292,23 @@ export const PreschoolHeader: React.FC = () => {
             </ListItem>
           ))}
         </List>
+
+        <Box sx={{ display: 'flex', justifyContent: 'center', gap: 1, mb: 2 }}>
+          {socialLinks.map((link) => (
+            <Tooltip title={link.label} key={link.label}>
+              <IconButton
+                component="a"
+                href={link.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`Visit our ${link.label} page`}
+                sx={{ color: '#2C3E50', bgcolor: '#FFF0F0', '&:hover': { bgcolor: '#FFE4E1', color: '#FF6B6B' } }}
+              >
+                {link.icon}
+              </IconButton>
+            </Tooltip>
+          ))}
+        </Box>
 
         <Button
           component="a"

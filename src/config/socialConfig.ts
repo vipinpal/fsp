@@ -31,9 +31,9 @@ export interface SocialConfig {
 
 export const socialConfig: SocialConfig = {
   facebook: {
-    enabled: true,
+    enabled: false,
     // ── Change ONLY this URL when reusing for a different school ──────────────
-    pageUrl: "https://www.facebook.com/imdb",
+    pageUrl: "",
     // ─────────────────────────────────────────────────────────────────────────
     maxPosts: 20,        // config-only — not sent to Facebook API (see note above)
     autoRotate: true,

@@ -26,35 +26,37 @@ export interface SiteConfig {
     facebook: string;
     instagram: string;
     youtube: string;
+    threads?: string;
     twitter?: string;
   };
 }
 
 export const siteConfig: SiteConfig = {
   siteType: 'preschool', // Default to Preschool experience! Toggle to 'school' to test original higher-school.
-  tenantId: 'abc-little-learners',
-  name: 'Little Learners Preschool & Early Learning Centre',
-  shortName: 'Little Learners',
-  tagline: 'Where Little Minds Grow, Play & Explore',
-  logo: '/branding/logo.svg',
-  favicon: '/branding/logo.svg',
-  phone: '+91-98765-43210',
-  phoneAlt: '+91-11-2856-7890',
-  whatsappPhone: '+919876543210',
-  email: 'hello@littlelearners.edu.in',
-  admissionEmail: 'admissions@littlelearners.edu.in',
+  tenantId: 'Little Wings Care School',
+  name: 'Little Wings Care School',
+  shortName: 'LWCS',
+  tagline: 'The Rising Sun',
+  logo: '/branding/little_wings_care_school_emblem.webp',
+  favicon: '/branding/little-wings-care-school-favicon.ico',
+  phone: '+91-94585-25278',
+  phoneAlt: '+91-76176-87708',
+  whatsappPhone: '919458525278',
+  email: 'littlewingsamroha@gmail.com',
+  admissionEmail: 'littlewingsamroha@gmail.com',
   address: {
-    line1: 'Plot 42, Sunshine Boulevard, Joya Road',
-    line2: 'Near Children Green Park',
+    line1: 'Joya Road',
+    line2: 'Opp. Jeevan Jyoti Hospital',
     city: 'Amroha',
     state: 'Uttar Pradesh',
     postalCode: '244221',
-    googleMapsEmbedUrl: 'https://maps.google.com/maps?q=Joya+Road,+Amroha,+Uttar+Pradesh&output=embed&z=15',
-    googleMapsDirectionsUrl: 'https://maps.google.com/?q=Joya+Road+Amroha',
+    googleMapsEmbedUrl: 'https://maps.google.com/maps?q=28.87444843597763,78.47188174719916&output=embed&z=17',
+    googleMapsDirectionsUrl: 'https://www.google.com/maps/dir/?api=1&destination=28.87444843597763%2C78.47188174719916',
   },
   social: {
-    facebook: 'https://facebook.com/LittleLearnersPreschool',
-    instagram: 'https://instagram.com/LittleLearnersPreschool',
-    youtube: 'https://youtube.com/@LittleLearnersPreschool',
+    facebook: 'https://www.facebook.com/profile.php?id=61587504522692',
+    instagram: 'https://www.instagram.com/little.wings.care.school/',
+    youtube: 'https://www.youtube.com/@Littlewingscareschool1',
+    threads: 'https://www.threads.com/@little.wings.care.school',
   },
 };
