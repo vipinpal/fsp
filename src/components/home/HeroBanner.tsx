@@ -4,10 +4,21 @@ import { ChevronLeft, ChevronRight, ArrowRight } from 'lucide-react';
 import { Link as RouterLink } from 'react-router-dom';
 import { homeContent } from '../../content/homeContent';
 import { schoolThemeConfig } from '../../theme/schoolTheme';
+import heroImage2 from '../../assets/preschool/hero/2.png';
+import heroImage3 from '../../assets/preschool/hero/3.png';
+import heroImage4 from '../../assets/preschool/hero/4.png';
+import heroImage5 from '../../assets/preschool/hero/5.png';
+import heroImage11 from '../../assets/preschool/hero/11.png';
 
 export const HeroBanner: React.FC = () => {
   const { palette } = schoolThemeConfig;
-  const { slides, interval = 6000, autoplay = true } = homeContent.hero;
+  const { interval = 6000, autoplay = true } = homeContent.hero;
+  const heroImages = [heroImage2, heroImage3, heroImage4, heroImage5, heroImage11];
+  const slides = heroImages.map((image, index) => ({
+    ...homeContent.hero.slides[index % homeContent.hero.slides.length],
+    id: `hero-${index + 1}`,
+    image,
+  }));
 
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false);

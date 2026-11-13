@@ -43,7 +43,7 @@ export const siteConfig: SiteConfig = {
   phone: '+91-94585-25278',
   phoneAlt: '+91-76176-87708',
   whatsappPhone: '919458525278',
-  whatsappMessage: 'Hello Little Wings Care School, I would like to enquire about preschool admission.',
+  whatsappMessage: "Hello Little Wings Care School!\n\nI'm interested in enrolling my child at your school. Could you please share details about the admission process, fee structure, available classes (Pre-Nursery, Nursery, LKG & UKG), and facilities?\n\nI would love to know more about the school and how to proceed with the admission. Thank you!",
   email: 'littlewingsamroha@gmail.com',
   admissionEmail: 'littlewingsamroha@gmail.com',
   address: {

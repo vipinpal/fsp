@@ -6,6 +6,11 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronLeft, ChevronRight, ArrowRight, Sparkles, Heart, ShieldCheck, Smile } from 'lucide-react';
 import { preschoolPalette } from '../../../config/preschoolTheme.palette';
 import { heroConfig } from '../../../config/preschool/hero.config';
+import heroImage2 from '../../../assets/preschool/hero/2.png';
+import heroImage3 from '../../../assets/preschool/hero/3.png';
+import heroImage4 from '../../../assets/preschool/hero/4.png';
+import heroImage5 from '../../../assets/preschool/hero/5.png';
+import heroImage11 from '../../../assets/preschool/hero/11.png';
 
 export interface PreschoolSlide {
   id: string;
@@ -24,16 +29,16 @@ const preschoolSlides: PreschoolSlide[] = [
     headlineMain: 'Play School in Amroha',
     headlineHighlight: 'for Happy, Confident Learners',
     subtitle: 'A joyful early learning environment where children build confidence, curiosity, and strong foundations through guided play and caring support.',
-    image: '/assets/preschool/hero/little-wings-care-school-hero.webp',
+    image: heroImage2,
     themeColor: preschoolPalette.primaryBlue,
   },
   {
     id: 'slide-2',
-    badge: '',
-    headlineMain: '',
-    headlineHighlight: '',
-    subtitle: '',
-    image: '/assets/preschool/hero/little_wings_care_school_hero_01.webp',
+    badge: '✨ LEARNING THROUGH PLAY',
+    headlineMain: 'Little Learners,',
+    headlineHighlight: 'Big Discoveries',
+    subtitle: 'Every day brings new opportunities to explore, create, and grow in a caring environment.',
+    image: heroImage3,
     themeColor: preschoolPalette.coral,
   },
   {
@@ -42,7 +47,7 @@ const preschoolSlides: PreschoolSlide[] = [
     headlineMain: 'A Secure Haven for',
     headlineHighlight: 'Healthy Smiles & Play',
     subtitle: 'CCTV streaming, soft padded grounds, paediatric first-aid certified educators, and biometric entry gates.',
-    image: 'https://images.unsplash.com/photo-1566492031773-4f4e44671857?auto=format&fit=crop&w=1600&q=80',
+    image: heroImage4,
     themeColor: preschoolPalette.leafGreen,
   },
   {
@@ -51,8 +56,17 @@ const preschoolSlides: PreschoolSlide[] = [
     headlineMain: 'Joyful Storytelling &',
     headlineHighlight: 'Early Discovery',
     subtitle: 'Interactive puppet theatre, pattern blocks, rhythm circles, and guided STEM exploration tailored by age stage.',
-    image: 'https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=1600&q=80',
+    image: heroImage5,
     themeColor: preschoolPalette.lavender,
+  },
+  {
+    id: 'slide-5',
+    badge: '💛 A CARING PLACE TO GROW',
+    headlineMain: 'Growing Together,',
+    headlineHighlight: 'One Happy Day at a Time',
+    subtitle: 'Warm, attentive guidance helps every child feel confident, supported, and ready to learn.',
+    image: heroImage11,
+    themeColor: preschoolPalette.primaryBlue,
   },
 ];
 
@@ -113,10 +127,8 @@ export const PreschoolHeroCarousel: React.FC = () => {
           sx={{
             position: 'absolute',
             inset: 0,
-            backgroundImage: idx === 1
-              ? 'none'
-              : `linear-gradient(135deg, rgba(48, 68, 90, 0.88) 0%, rgba(48, 68, 90, 0.65) 55%, rgba(48, 68, 90, 0.45) 100%), url(${slide.image})`,
-            bgcolor: idx === 1 ? '#DDF5FC' : 'transparent',
+            backgroundImage: `linear-gradient(135deg, rgba(48, 68, 90, 0.88) 0%, rgba(48, 68, 90, 0.65) 55%, rgba(48, 68, 90, 0.45) 100%), url(${slide.image})`,
+            bgcolor: 'transparent',
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             opacity: idx === currentIndex ? 1 : 0,
@@ -126,22 +138,6 @@ export const PreschoolHeroCarousel: React.FC = () => {
         />
       ))}
 
-      {currentIndex === 1 && (
-        <Box
-          component="img"
-          src={current.image}
-          alt="Little Wings Care School preschool admissions hero artwork"
-          sx={{
-            position: 'absolute',
-            inset: 0,
-            width: '100%',
-            height: '100%',
-            objectFit: 'contain',
-            objectPosition: 'center',
-            zIndex: 2,
-          }}
-        />
-      )}
 {/* 
       <Box
         component="img"
@@ -180,7 +176,6 @@ export const PreschoolHeroCarousel: React.FC = () => {
       )}
 
       {/* Hero Foreground Content */}
-      {currentIndex !== 1 && (
       <Container
         maxWidth="lg"
         sx={{
@@ -385,7 +380,6 @@ export const PreschoolHeroCarousel: React.FC = () => {
           </Box>
         </Box>
       </Container>
-      )}
 
       {/* Carousel Navigation Arrow Buttons */}
       <IconButton

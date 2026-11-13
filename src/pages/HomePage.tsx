@@ -6,7 +6,6 @@ import { AboutSection } from '../components/home/AboutSection';
 import { StatsSection } from '../components/home/StatsSection';
 import { WhyChooseUs } from '../components/home/WhyChooseUs';
 import { AcademicsGrid } from '../components/home/AcademicsGrid';
-import { HomeGallery } from '../components/home/HomeGallery';
 import { TestimonialsSection } from '../components/home/TestimonialsSection';
 import { HomeFAQ } from '../components/home/HomeFAQ';
 import { AdmissionCTA } from '../components/home/AdmissionCTA';
@@ -28,7 +27,6 @@ export const HomePage: React.FC = () => {
       <WhyChooseUs />
       <AcademicsGrid />
       <AdmissionCTA />
-      <HomeGallery />
       <FacebookSection />
       <TestimonialsSection />
       <HomeFAQ />
