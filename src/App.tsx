@@ -12,15 +12,30 @@ import { AppRoutes as SchoolAppRoutes } from './routes/AppRoutes';
 import { PreschoolHeader } from './components/preschool/Header/PreschoolHeader';
 import { PreschoolFooter } from './components/preschool/Footer/PreschoolFooter';
 import { PreschoolHomePage } from './pages/preschool/PreschoolHomePage';
+import { PreschoolAboutPage } from './pages/preschool/PreschoolAboutPage';
+import { PreschoolAdmissionsPage } from './pages/preschool/PreschoolAdmissionsPage';
+import { PreschoolContactPage } from './pages/preschool/PreschoolContactPage';
+import { PreschoolProgramsPage } from './pages/preschool/PreschoolProgramsPage';
+import { PreschoolGalleryPage } from './pages/preschool/PreschoolGalleryPage';
+import { PreschoolWhyUsPage } from './pages/preschool/PreschoolWhyUsPage';
 import { MobileQuickActionBar } from './components/preschool/QuickActions/MobileQuickActionBar';
 
 // Scroll to top helper
 const ScrollToTop: React.FC = () => {
-  const { pathname } = useLocation();
+  const { pathname, hash } = useLocation();
 
   useEffect(() => {
-    window.scrollTo({ top: 0, left: 0, behavior: 'instant' as ScrollBehavior });
-  }, [pathname]);
+    const frame = window.requestAnimationFrame(() => {
+      if (hash) {
+        document.getElementById(hash.slice(1))?.scrollIntoView({ behavior: 'smooth' });
+        return;
+      }
+
+      window.scrollTo({ top: 0, left: 0, behavior: 'instant' as ScrollBehavior });
+    });
+
+    return () => window.cancelAnimationFrame(frame);
+  }, [pathname, hash]);
 
   return null;
 };
@@ -42,6 +57,13 @@ const MainContent: React.FC = () => {
       <Box sx={{ pb: { xs: 7, md: 0 } }}>
         <PreschoolHeader />
         <Routes>
+          <Route path="/" element={<PreschoolHomePage />} />
+          <Route path="/admissions/*" element={<PreschoolAdmissionsPage />} />
+          <Route path="/programs/*" element={<PreschoolProgramsPage />} />
+          <Route path="/about/*" element={<PreschoolAboutPage />} />
+          <Route path="/contact/*" element={<PreschoolContactPage />} />
+          <Route path="/gallery/*" element={<PreschoolGalleryPage />} />
+          <Route path="/why-us/*" element={<PreschoolWhyUsPage />} />
           <Route path="*" element={<PreschoolHomePage />} />
         </Routes>
         <PreschoolFooter />

@@ -2,18 +2,17 @@ export interface SEOConfig {
   defaultTitle: string;
   titleTemplate: string;
   defaultDescription: string;
-  keywords: string[];
   siteUrl: string;
   defaultOgImage: string;
   twitterHandle: string;
   organizationSchema: {
     "@context": string;
-    "@type": string;
+    "@type": string | string[];
     name: string;
     alternateName: string;
     url: string;
     logo: string;
-    foundingDate?: string;
+    sameAs?: string[];
     address: {
       "@type": string;
       streetAddress: string;
@@ -35,40 +34,22 @@ export interface SEOConfig {
 export const seoConfig: SEOConfig = {
   defaultTitle: "Little Wings Care School | Play School in Amroha",
   titleTemplate: "%s | Little Wings Care School",
-  defaultDescription: "Little Wings Care School (LECS) is a play school in Amroha for Pre-Nursery, Nursery, LKG, and UKG, with activity-based learning, caring teachers, and family engagement.",
-  keywords: [
-    "play school in Amroha",
-    "preschool in Amroha",
-    "best preschool in Amroha",
-    "nursery school in Amroha",
-    "nursery admission Amroha",
-    "Pre-Nursery in Amroha",
-    "LKG admission Amroha",
-    "UKG school in Amroha",
-    "kindergarten in Amroha",
-    "early childhood education Amroha",
-    "activity-based learning Amroha",
-    "Little Wings Care School",
-    "LECS Amroha",
-    "LECS play school",
-    "LECS preschool Amroha",
-    "Little Wings Care School LECS",
-    "play school near Joya Road Amroha",
-    "preschool near Jeevan Jyoti Hospital Amroha",
-    "play school admission Amroha",
-    "Nursery LKG UKG admission Amroha",
-    "activity-based preschool Amroha",
-  ],
-  siteUrl: "",
+  defaultDescription: "Looking for a play school in Amroha? Little Wings Care School offers Pre-Nursery, Nursery, LKG and UKG with activity-based learning. Contact us for admission enquiries and school visits.",
+  siteUrl: "https://littlewingscareplayschool.com",
   defaultOgImage: "https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=1200&auto=format&fit=crop&q=80",
   twitterHandle: "",
   organizationSchema: {
     "@context": "https://schema.org",
-    "@type": "EducationalOrganization",
+    "@type": ["EducationalOrganization", "Preschool"],
     name: "Little Wings Care School",
     alternateName: "LECS",
-    url: "",
-    logo: "",
+    url: "https://littlewingscareplayschool.com",
+    logo: "https://littlewingscareplayschool.com/branding/little_wings_care_school_emblem.webp",
+    sameAs: [
+      "https://www.facebook.com/profile.php?id=61587504522692",
+      "https://www.instagram.com/little.wings.care.school/",
+      "https://www.youtube.com/@Littlewingscareschool1"
+    ],
     address: {
       "@type": "PostalAddress",
       streetAddress: "Joya Road, Opp. Jeevan Jyoti Hospital",

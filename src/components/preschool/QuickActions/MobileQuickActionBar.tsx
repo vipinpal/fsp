@@ -46,7 +46,7 @@ export const MobileQuickActionBar: React.FC = () => {
       {/* Action 2: WhatsApp */}
       <Box
         component="a"
-        href={`https://wa.me/${siteConfig.whatsappPhone}`}
+        href={`https://wa.me/${siteConfig.whatsappPhone}?text=${encodeURIComponent(siteConfig.whatsappMessage)}`}
         target="_blank"
         rel="noreferrer"
         sx={{
@@ -88,7 +88,7 @@ export const MobileQuickActionBar: React.FC = () => {
       {/* Action 4: Admission */}
       <Box
         component="a"
-        href="#admission-form"
+        href="/admissions/#admission-form"
         sx={{
           display: 'flex',
           alignItems: 'center',

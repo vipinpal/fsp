@@ -6,15 +6,12 @@ import { PreschoolHero } from '../../components/preschool/Hero/PreschoolHero';
 import { WhyLearnersLoveUs } from '../../components/preschool/WhyUs/WhyLearnersLoveUs';
 import { AnnualEventsJourney } from '../../components/preschool/About/SchoolProfileSection';
 import { LearningJourneyPath } from '../../components/preschool/Journey/LearningJourneyPath';
-import { ProgramCardsSection } from '../../components/preschool/Programs/ProgramCardsSection';
 import { LearningThroughPlay } from '../../components/preschool/Activities/LearningThroughPlay';
 import { CampusExplorer } from '../../components/preschool/Campus/CampusExplorer';
 import { ParentTrustSection } from '../../components/preschool/Trust/ParentTrustSection';
 import { SocialFeedSection } from '../../components/preschool/Social/SocialFeedSection';
-import { PreschoolGallery } from '../../components/preschool/Gallery/PreschoolGallery';
 import { ParentTestimonials } from '../../components/preschool/Testimonials/ParentTestimonials';
 import { VisitUsSection } from '../../components/preschool/Visit/VisitUsSection';
-import { AdmissionEnquirySection } from '../../components/preschool/Admission/AdmissionEnquirySection';
 import { PreschoolFAQ } from '../../components/preschool/FAQ/PreschoolFAQ';
 import { FinalAdmissionCTA } from '../../components/preschool/CTA/FinalAdmissionCTA';
 import { JumpingCharacterBridge } from '../../components/preschool/visual/JumpingCharacterBridge';
@@ -63,21 +60,15 @@ export const PreschoolHomePage: React.FC = () => {
       <JumpingCharacterBridge align="right" size={175} offsetY={-180} />
       <WhyLearnersLoveUs />
 
-      <ProgramCardsSection />
       <LearningJourneyPath />
-
-      {/* Leaping boy cutout transitioning into Learning Play */}
-      {/* <JumpingCharacterBridge align="right" size={170} offsetY={-85} /> */}
       <LearningThroughPlay />
 
       <CampusExplorer />
-      <ParentTrustSection />
+      {/* <ParentTrustSection /> */}
       <AnnualEventsJourney />
-      <PreschoolGallery />
       <SocialFeedSection />
       <ParentTestimonials />
-      <VisitUsSection />
-      <AdmissionEnquirySection />
+      {/* <VisitUsSection /> */}
 
       <PreschoolFAQ />
       <FinalAdmissionCTA />

@@ -69,7 +69,7 @@ export const JumpingCharacterBridge: React.FC<Props> = ({
           {/* High-quality boy cutout image jumping across sections */}
           <Box
             component="img"
-            src="/assets/preschool/characters/avi/jump.svg"
+            src="/assets/preschool/characters/avi/thoughtful-orange-bunny-mascot.png"
             alt="Playful boy leaping between sections"
             sx={{
               width: { xs: size * 0.75, sm: size * 0.85, md: size },

@@ -1,3 +1,5 @@
+import { siteConfig } from '../site.config';
+
 export interface HeroConfig {
   badgeText: string;
   headlineMain: string;
@@ -14,13 +16,13 @@ export interface HeroConfig {
 export const heroConfig: HeroConfig = {
   badgeText: '☀️ Admissions Open for 2026–2027 Academic Year',
   headlineMain: 'Little Wings Care',
-  headlineHighlight: 'The Rising Sun',
+  headlineHighlight: 'Let your child fly',
   subtitle: 'A nurturing preschool in Amroha where young children learn through play, exploration, and caring guidance.',
   primaryCtaText: '🎒 Book a School Visit',
-  primaryCtaLink: '#admission-form',
+  primaryCtaLink: '/admissions/#admission-form',
   secondaryCtaText: '🎨 Explore Our Programs',
-  secondaryCtaLink: '#programs',
-  whatsappMessage: 'Hello Little Wings Care School, I would like to enquire about preschool admission.',
+  secondaryCtaLink: '/programs/#programs',
+  whatsappMessage: siteConfig.whatsappMessage,
   stats: [
     { label: 'Classes', value: '4', icon: 'Smile' },
     { label: 'Teacher-Student Ratio', value: '1:10', icon: 'Heart' },

@@ -18,12 +18,13 @@ import {
 } from '@mui/material';
 import { Menu as MenuIcon, X as CloseIcon, Phone, MessageCircle, MapPin, AtSign } from 'lucide-react';
 import { siteConfig } from '../../../config/site.config';
-import { FacebookIcon, InstagramIcon } from '../../common/BrandIcons';
+import { FacebookIcon, InstagramIcon, YoutubeIcon } from '../../common/BrandIcons';
 
 const socialLinks = [
   { label: 'Instagram', href: siteConfig.social.instagram, icon: <InstagramIcon size={17} /> },
   { label: 'Facebook', href: siteConfig.social.facebook, icon: <FacebookIcon size={16} /> },
   { label: 'Threads', href: siteConfig.social.threads, icon: <AtSign size={17} /> },
+  { label: 'YouTube', href: siteConfig.social.youtube, icon: <YoutubeIcon size={17} /> },
 ].filter((link) => link.href);
 
 export const PreschoolHeader: React.FC = () => {
@@ -45,14 +46,13 @@ export const PreschoolHeader: React.FC = () => {
   }, []);
 
   const navLinks = [
-    { label: 'Home', href: '#' },
-    { label: 'Why Us', href: '#why-us' },
-    { label: 'Programs', href: '#programs' },
-    { label: 'Learning Play', href: '#activities' },
-    { label: 'Campus', href: '#campus' },
-    { label: 'Gallery', href: '#gallery' },
-    { label: 'Parents', href: '#testimonials' },
-    { label: 'Contact', href: '#visit-us' },
+    { label: 'Home', href: '/' },
+    { label: 'About', href: '/about/' },
+    { label: 'Why Us', href: '/why-us/' },
+    { label: 'Programmes', href: '/programs/' },
+    { label: 'Admissions', href: '/admissions/' },
+    { label: 'Gallery', href: '/gallery/' },
+    { label: 'Contact', href: '/contact/' },
   ];
 
   return (
@@ -102,7 +102,7 @@ export const PreschoolHeader: React.FC = () => {
               </Box>
               <Box
                 component="a"
-                href={`https://wa.me/${siteConfig.whatsappPhone}`}
+                href={`https://wa.me/${siteConfig.whatsappPhone}?text=${encodeURIComponent(siteConfig.whatsappMessage)}`}
                 target="_blank"
                 rel="noreferrer"
                 aria-label="WhatsApp admissions"
@@ -140,7 +140,7 @@ export const PreschoolHeader: React.FC = () => {
             {/* Preschool Logo */}
             <Box
               component="a"
-              href="#"
+              href="/"
               sx={{
                 display: 'flex',
                 alignItems: 'center',
@@ -209,7 +209,7 @@ export const PreschoolHeader: React.FC = () => {
 
                 <Button
                   component="a"
-                  href="#admission-form"
+                  href="/admissions/#admission-form"
                   variant="contained"
                   sx={{
                     bgcolor: '#FF6B6B',
@@ -312,7 +312,7 @@ export const PreschoolHeader: React.FC = () => {
 
         <Button
           component="a"
-          href="#admission-form"
+          href="/admissions/#admission-form"
           fullWidth
           variant="contained"
           onClick={() => setMobileOpen(false)}

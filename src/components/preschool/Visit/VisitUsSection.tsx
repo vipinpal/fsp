@@ -7,47 +7,8 @@ import { GoogleMapEmbed } from '../../common/GoogleMapEmbed';
 
 export const VisitUsSection: React.FC = () => {
   return (
-    <Box id="visit-us" sx={{ py: { xs: 8, md: 14 }, bgcolor: '#FFFDF9' }}>
+    <Box id="visit-us" sx={{pt: { xs: 4, md: 4 }, pb: { xs: 8, md: 14 }, bgcolor: '#FFFDF9' }}>
       <Container maxWidth="lg">
-        {/* Section Header */}
-        <Box sx={{ textAlign: 'center', mb: 7, maxWidth: 720, mx: 'auto' }}>
-          <Typography
-            variant="overline"
-            sx={{
-              fontFamily: "'Fredoka', sans-serif",
-              fontWeight: 700,
-              color: '#FF6B6B',
-              letterSpacing: '0.12em',
-              fontSize: '0.95rem',
-            }}
-          >
-            📍 COME VISIT US
-          </Typography>
-          <Typography
-            variant="h2"
-            sx={{
-              fontFamily: "'Fredoka', sans-serif",
-              fontWeight: 700,
-              color: '#2C3E50',
-              mt: 1,
-              fontSize: { xs: '2rem', md: '2.8rem' },
-            }}
-          >
-            Come Visit Our Little World
-          </Typography>
-          <Typography
-            variant="body1"
-            sx={{
-              fontFamily: "'Plus Jakarta Sans', sans-serif",
-              color: '#546E7A',
-              mt: 1.5,
-              fontSize: '1.1rem',
-            }}
-          >
-            We would love to welcome you and your child for a personal walkthrough of our classrooms and play areas.
-          </Typography>
-        </Box>
-
         <Grid container spacing={4}>
           {/* Left: School Contact Info */}
           <Grid item xs={12} md={5}>
@@ -100,7 +61,7 @@ export const VisitUsSection: React.FC = () => {
                       <Typography variant="subtitle2" sx={{ fontFamily: "'Fredoka', sans-serif", fontWeight: 700, color: '#2C3E50' }}>
                         Admissions Phone
                       </Typography>
-                      <Typography variant="body2" sx={{ fontFamily: "'Plus Jakarta Sans', sans-serif", color: '#546E7A' }}>
+                      <Typography component="a" href={`tel:${siteConfig.phone}`} variant="body2" sx={{ fontFamily: "'Plus Jakarta Sans', sans-serif", color: '#546E7A', textDecoration: 'none' }}>
                         {siteConfig.phone} / {siteConfig.phoneAlt}
                       </Typography>
                     </Box>
@@ -114,7 +75,7 @@ export const VisitUsSection: React.FC = () => {
                       <Typography variant="subtitle2" sx={{ fontFamily: "'Fredoka', sans-serif", fontWeight: 700, color: '#2C3E50' }}>
                         Email Enquiries
                       </Typography>
-                      <Typography variant="body2" sx={{ fontFamily: "'Plus Jakarta Sans', sans-serif", color: '#546E7A' }}>
+                      <Typography component="a" href={`mailto:${siteConfig.email}`} variant="body2" sx={{ fontFamily: "'Plus Jakarta Sans', sans-serif", color: '#546E7A', textDecoration: 'none' }}>
                         {siteConfig.email}
                       </Typography>
                     </Box>

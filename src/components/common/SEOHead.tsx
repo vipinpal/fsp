@@ -5,7 +5,6 @@ import { schoolConfig } from '../../config/schoolConfig';
 interface SEOHeadProps {
   title?: string;
   description?: string;
-  keywords?: string[];
   canonicalPath?: string;
   ogImage?: string;
 }
@@ -13,22 +12,19 @@ interface SEOHeadProps {
 export const SEOHead: React.FC<SEOHeadProps> = ({
   title,
   description = seoConfig.defaultDescription,
-  keywords = seoConfig.keywords,
   canonicalPath = '',
   ogImage = seoConfig.defaultOgImage,
 }) => {
   const fullTitle = title
-    ? `${title} | ${schoolConfig.name}`
+    ? title.includes(schoolConfig.name)
+      ? title
+      : `${title} | ${schoolConfig.name}`
     : seoConfig.defaultTitle;
   const siteUrl = seoConfig.siteUrl || window.location.origin;
   const canonicalUrl = new URL(canonicalPath || window.location.pathname, siteUrl).toString();
-  const keywordContent = keywords.join(', ');
-
   useEffect(() => {
-    // Dynamically update document head tags in browser
     document.title = fullTitle;
 
-    // Meta Description
     let metaDesc = document.querySelector("meta[name='description']");
     if (!metaDesc) {
       metaDesc = document.createElement('meta');
@@ -37,15 +33,11 @@ export const SEOHead: React.FC<SEOHeadProps> = ({
     }
     metaDesc.setAttribute('content', description);
 
-    let metaKeywords = document.querySelector("meta[name='keywords']");
-    if (!metaKeywords) {
-      metaKeywords = document.createElement('meta');
-      metaKeywords.setAttribute('name', 'keywords');
-      document.head.appendChild(metaKeywords);
+    const existingKeywords = document.querySelector("meta[name='keywords']");
+    if (existingKeywords) {
+      existingKeywords.remove();
     }
-    metaKeywords.setAttribute('content', keywordContent);
 
-    // OpenGraph Title
     let ogTitle = document.querySelector("meta[property='og:title']");
     if (!ogTitle) {
       ogTitle = document.createElement('meta');
@@ -54,7 +46,6 @@ export const SEOHead: React.FC<SEOHeadProps> = ({
     }
     ogTitle.setAttribute('content', fullTitle);
 
-    // OpenGraph Description
     let ogDesc = document.querySelector("meta[property='og:description']");
     if (!ogDesc) {
       ogDesc = document.createElement('meta');
@@ -63,7 +54,30 @@ export const SEOHead: React.FC<SEOHeadProps> = ({
     }
     ogDesc.setAttribute('content', description);
 
-    // OpenGraph Image
+    let ogUrl = document.querySelector("meta[property='og:url']");
+    if (!ogUrl) {
+      ogUrl = document.createElement('meta');
+      ogUrl.setAttribute('property', 'og:url');
+      document.head.appendChild(ogUrl);
+    }
+    ogUrl.setAttribute('content', canonicalUrl);
+
+    let twitterTitle = document.querySelector("meta[name='twitter:title']");
+    if (!twitterTitle) {
+      twitterTitle = document.createElement('meta');
+      twitterTitle.setAttribute('name', 'twitter:title');
+      document.head.appendChild(twitterTitle);
+    }
+    twitterTitle.setAttribute('content', fullTitle);
+
+    let twitterDescription = document.querySelector("meta[name='twitter:description']");
+    if (!twitterDescription) {
+      twitterDescription = document.createElement('meta');
+      twitterDescription.setAttribute('name', 'twitter:description');
+      document.head.appendChild(twitterDescription);
+    }
+    twitterDescription.setAttribute('content', description);
+
     let ogImgTag = document.querySelector("meta[property='og:image']");
     if (!ogImgTag) {
       ogImgTag = document.createElement('meta');
@@ -72,7 +86,6 @@ export const SEOHead: React.FC<SEOHeadProps> = ({
     }
     ogImgTag.setAttribute('content', ogImage);
 
-    // Canonical link
     let canonicalTag = document.querySelector("link[rel='canonical']");
     if (!canonicalTag) {
       canonicalTag = document.createElement('link');
@@ -81,19 +94,52 @@ export const SEOHead: React.FC<SEOHeadProps> = ({
     }
     canonicalTag.setAttribute('href', canonicalUrl);
 
-    // Structured Data JSON-LD
+    const schema = {
+      '@context': 'https://schema.org',
+      '@type': ['LocalBusiness', 'EducationalOrganization', 'Preschool'],
+      '@id': `${siteUrl}/#school`,
+      name: schoolConfig.name,
+      alternateName: schoolConfig.shortName,
+      url: `${siteUrl}/`,
+      logo: new URL(schoolConfig.logo, siteUrl).toString(),
+      image: ogImage,
+      telephone: schoolConfig.contact.phone,
+      email: schoolConfig.contact.email,
+      sameAs: [
+        schoolConfig.social.facebook,
+        schoolConfig.social.instagram,
+        schoolConfig.social.youtube
+      ].filter(Boolean),
+      address: {
+        '@type': 'PostalAddress',
+        streetAddress: [schoolConfig.address.line1, schoolConfig.address.line2].filter(Boolean).join(', '),
+        addressLocality: schoolConfig.address.city,
+        addressRegion: schoolConfig.address.state,
+        postalCode: schoolConfig.address.postalCode,
+        addressCountry: 'IN',
+      },
+      contactPoint: {
+        '@type': 'ContactPoint',
+        telephone: schoolConfig.contact.phone,
+        contactType: 'Admissions & General Information',
+        email: schoolConfig.contact.email,
+        availableLanguage: ['English', 'Hindi'],
+      },
+      areaServed: {
+        '@type': 'City',
+        name: `${schoolConfig.address.city}, ${schoolConfig.address.state}`,
+      },
+      description,
+    };
+
     let scriptTag = document.querySelector("script[type='application/ld+json']");
     if (!scriptTag) {
       scriptTag = document.createElement('script');
       scriptTag.setAttribute('type', 'application/ld+json');
       document.head.appendChild(scriptTag);
     }
-    scriptTag.textContent = JSON.stringify({
-      ...seoConfig.organizationSchema,
-      url: siteUrl,
-      logo: new URL(schoolConfig.logo, siteUrl).toString(),
-    });
-  }, [fullTitle, description, keywordContent, canonicalUrl, ogImage]);
+    scriptTag.textContent = JSON.stringify(schema);
+  }, [fullTitle, description, canonicalUrl, ogImage]);
 
   return null;
 };

@@ -1,63 +1,42 @@
 import React from 'react';
-import { Box, Container, Typography, Grid, Paper } from '@mui/material';
-import { Palette, Brain, Heart, Gamepad2, Sprout, ShieldCheck } from 'lucide-react';
+import { Box, Button, Container, Typography, Grid, Paper } from '@mui/material';
+import { Link } from 'react-router-dom';
+import { Palette, Heart, Sprout } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { sectionEnvironments, preschoolPalette } from '../../../config/preschoolTheme.palette';
-import { CharacterLeo } from '../illustrations/PreschoolWorld';
 
 export const WhyLearnersLoveUs: React.FC = () => {
   const env = sectionEnvironments.whyUs;
 
   const pillars = [
     {
-      title: 'Creative Learning',
-      description: 'Hands-on arts, clay modeling, finger painting, and music expression every single day.',
+      title: 'Learning through play',
+      description: 'Stories, creative activities, play, and exploration make early learning engaging and meaningful.',
       icon: <Palette size={32} color={preschoolPalette.coral} />,
       bgColor: preschoolPalette.peachLight,
       borderColor: preschoolPalette.coral,
     },
     {
-      title: 'Curious Minds',
-      description: 'Encouraging playful questions, little science labs, shape puzzles, and STEM blocks.',
-      icon: <Brain size={32} color={preschoolPalette.primaryBlue} />,
+      title: 'Care that builds confidence',
+      description: 'A welcoming environment helps children settle in, try new things, and celebrate their progress.',
+      icon: <Heart size={32} color={preschoolPalette.primaryBlue} />,
       bgColor: preschoolPalette.skyLight,
       borderColor: preschoolPalette.primaryBlue,
     },
     {
-      title: 'Caring Teachers',
-      description: 'Compassionate, background-verified educators who give dedicated warmth to each child.',
-      icon: <Heart size={32} color={preschoolPalette.coral} />,
-      bgColor: preschoolPalette.coralLight,
-      borderColor: preschoolPalette.coral,
-    },
-    {
-      title: 'Learn Through Play',
-      description: 'Gamified storytelling, mini slides, sensory play corners, and indoor splash fun.',
-      icon: <Gamepad2 size={32} color={preschoolPalette.lavender} />,
-      bgColor: preschoolPalette.lavenderLight,
-      borderColor: preschoolPalette.lavender,
-    },
-    {
-      title: 'Growing Together',
-      description: 'Building peer kindness, sharing habits, emotional intelligence, and early team play.',
+      title: 'Growing together',
+      description: 'Children learn alongside their peers while building curiosity, communication, and independence.',
       icon: <Sprout size={32} color={preschoolPalette.leafGreen} />,
       bgColor: preschoolPalette.leafGreenLight,
       borderColor: preschoolPalette.leafGreen,
     },
-    {
-      title: '100% Safe Sanctuary',
-      description: 'CCTV streaming, soft padded play floors, biometric access, and pediatric first aid.',
-      icon: <ShieldCheck size={32} color={preschoolPalette.mint} />,
-      bgColor: preschoolPalette.mintLight,
-      borderColor: preschoolPalette.mint,
-    },
   ];
 
   return (
-    <Box id="why-us" sx={{ py: { xs: 10, md: 0 }, bgcolor: env.bg }}>
+    <Box id="why-us" sx={{ py: { xs: 10, md: 0 }, bgcolor: env.bg, scrollMarginTop: { xs: '72px', md: '96px' } }}>
       <Container maxWidth="lg">
         {/* Section Title */}
-        <Box sx={{ textAlign: 'center', mb: 8, maxWidth: 740, mx: 'auto' }}>
+        <Box sx={{ textAlign: 'center', mb: { xs: 4, md: 5 }, maxWidth: 740, mx: 'auto' }}>
           <Typography
             variant="overline"
             sx={{
@@ -80,20 +59,20 @@ export const WhyLearnersLoveUs: React.FC = () => {
               fontSize: { xs: '2.1rem', md: '2.9rem' },
             }}
           >
-            A Digital & Physical Playground Designed for Joy
+            A place for play, care, and curiosity
           </Typography>
         </Box>
 
         {/* Feature Cards Grid */}
-        <Grid container spacing={3.5}>
+        <Grid container spacing={2.5}>
           {pillars.map((item) => (
-            <Grid item xs={12} sm={6} md={4} key={item.title}>
+            <Grid item xs={12} md={4} key={item.title}>
               <motion.div whileHover={{ scale: 1.03, y: -6 }}>
                 <Paper
                   elevation={0}
                   sx={{
-                    p: 3.5,
-                    borderRadius: '32px',
+                    p: { xs: 2.5, md: 3 },
+                    borderRadius: '26px',
                     bgcolor: item.bgColor,
                     border: `2px solid ${item.borderColor}33`,
                     height: '100%',
@@ -112,7 +91,7 @@ export const WhyLearnersLoveUs: React.FC = () => {
                       display: 'flex',
                       alignItems: 'center',
                       justifyContent: 'center',
-                      mb: 2.5,
+                      mb: 2,
                       boxShadow: '0 6px 16px rgba(0,0,0,0.04)',
                     }}
                   >
@@ -126,7 +105,7 @@ export const WhyLearnersLoveUs: React.FC = () => {
                       fontWeight: 700,
                       color: preschoolPalette.text,
                       mb: 1.2,
-                      fontSize: '1.35rem',
+                      fontSize: { xs: '1.2rem', md: '1.3rem' },
                     }}
                   >
                     {item.title}
@@ -148,6 +127,23 @@ export const WhyLearnersLoveUs: React.FC = () => {
             </Grid>
           ))}
         </Grid>
+        <Box sx={{ display: 'flex', justifyContent: 'center', mt: 3.5 }}>
+          <Button
+            component={Link}
+            to="/why-us/"
+            variant="outlined"
+            sx={{
+              borderColor: preschoolPalette.mint,
+              color: preschoolPalette.text,
+              borderRadius: '9999px',
+              px: 2.5,
+              fontFamily: "'Fredoka', sans-serif",
+              fontWeight: 700,
+            }}
+          >
+            Discover more about our approach
+          </Button>
+        </Box>
       </Container>
     </Box>
   );

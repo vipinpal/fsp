@@ -49,7 +49,7 @@ export const FinalAdmissionCTA: React.FC = () => {
 
         <Button
           component="a"
-          href="#admission-form"
+          href="/admissions/#admission-form"
           variant="contained"
           size="large"
           sx={{

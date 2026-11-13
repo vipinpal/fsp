@@ -40,6 +40,7 @@ interface Props {
   floatingObjects?: FloatingConfig[];
   /** Bridge type to render after the section (optional) */
   bridgeType?: 'organicWave' | 'adventureTrail' | 'cloudBridge' | 'rollingHills' | 'rainbowBridge';
+  bridgeProp?: Record<string, any>;
   /** Height of the scene container */
   height?: number | string;
   /** Optional nested content */
@@ -52,6 +53,7 @@ export const SectionDecoration: React.FC<Props> = ({
   characters = [],
   floatingObjects = [],
   bridgeType,
+  bridgeProp = {},
   height,
   children,
 }) => {
@@ -126,7 +128,7 @@ export const SectionDecoration: React.FC<Props> = ({
       {/* Optional bridge to the next section */}
       {bridgeType && (
         <Box sx={{ position: 'relative', zIndex: 2 }}>
-          <SectionBridge type={bridgeType} height={120} />
+          <SectionBridge type={bridgeType} height={bridgeProp.height || 120} />
         </Box>
       )}
     </Box>

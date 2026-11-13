@@ -17,7 +17,8 @@ export const HomePage: React.FC = () => {
   return (
     <Box component="main">
       <SEOHead
-        title="Leading CBSE World School in New Delhi"
+        title="Little Wings Care School | Play School in Amroha"
+        description="Looking for a play school in Amroha? Little Wings Care School offers Pre-Nursery, Nursery, LKG and UKG with activity-based learning. Contact us for admission enquiries and school visits."
         canonicalPath="/"
       />
       <MarqueeNotice />

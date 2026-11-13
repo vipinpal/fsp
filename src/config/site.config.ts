@@ -11,6 +11,7 @@ export interface SiteConfig {
   phone: string;
   phoneAlt?: string;
   whatsappPhone: string;
+  whatsappMessage: string;
   email: string;
   admissionEmail: string;
   address: {
@@ -35,13 +36,14 @@ export const siteConfig: SiteConfig = {
   siteType: 'preschool', // Default to Preschool experience! Toggle to 'school' to test original higher-school.
   tenantId: 'Little Wings Care School',
   name: 'Little Wings Care School',
-  shortName: 'LWCS',
-  tagline: 'The Rising Sun',
+  shortName: 'Little Wings Care School',
+  tagline: 'Let your child fly',
   logo: '/branding/little_wings_care_school_emblem.webp',
   favicon: '/branding/little-wings-care-school-favicon.ico',
   phone: '+91-94585-25278',
   phoneAlt: '+91-76176-87708',
   whatsappPhone: '919458525278',
+  whatsappMessage: 'Hello Little Wings Care School, I would like to enquire about preschool admission.',
   email: 'littlewingsamroha@gmail.com',
   admissionEmail: 'littlewingsamroha@gmail.com',
   address: {

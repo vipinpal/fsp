@@ -62,7 +62,7 @@ export const ProgramCardsSection: React.FC = () => {
                 fontSize: '0.95rem',
               }}
             >
-              🌈 DISCOVER EXPLORER STAGES
+              🌈 A learning journey for every stage
             </Typography>
             <Typography
               variant="h2"
@@ -74,7 +74,7 @@ export const ProgramCardsSection: React.FC = () => {
                 mt: 1,
               }}
             >
-              Miniature Worlds Tailored by Age Stage
+              Our Preschool Programmes
             </Typography>
             <Typography
               variant="body1"
@@ -86,7 +86,19 @@ export const ProgramCardsSection: React.FC = () => {
                 lineHeight: 1.6,
               }}
             >
-              Every stage has its own sensory ecosystem, custom-tailored play equipment, and cognitive milestones.
+              Discover the learning experiences offered in Pre-Nursery, Nursery, LKG and UKG at Little Wings Care School.
+            </Typography>
+            <Typography
+              variant="body1"
+              sx={{
+                fontFamily: "'Plus Jakarta Sans', sans-serif",
+                color: preschoolPalette.mutedText,
+                mt: 2,
+                fontSize: { xs: '1rem', md: '1.15rem' },
+                lineHeight: 1.6,
+              }}
+            >
+             If you are comparing a preschool or nursery school in Amroha, explore each programme below. Parents looking for a Pre-Nursery school in Amroha or an LKG school in Amroha can contact us for age guidance and current programme information.
             </Typography>
           </Box>
 
@@ -147,6 +159,7 @@ export const ProgramCardsSection: React.FC = () => {
 
                       {/* Title & Tagline */}
                       <Typography
+                        component="h3"
                         variant="h4"
                         sx={{
                           fontFamily: "'Fredoka', sans-serif",
@@ -208,7 +221,7 @@ export const ProgramCardsSection: React.FC = () => {
                       {/* CTA Button */}
                       <Button
                         component="a"
-                        href="#admission-form"
+                        href="/admissions/#admission-form"
                         fullWidth
                         variant="contained"
                         endIcon={<ArrowRight size={18} />}

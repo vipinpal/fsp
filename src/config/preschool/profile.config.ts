@@ -1,6 +1,6 @@
 export const preschoolProfile = {
   quote: 'The whole purpose of education is to turn windows into mirrors.',
-  overview: 'Little Wings Care School - The Rising Sun - is a preschool in Amroha devoted to nurturing young children with care, curiosity, and trust. Our learning environment encourages every child to explore their potential and grow through meaningful experiences.',
+  overview: 'Little Wings Care School - Let your child fly - is a preschool in Amroha devoted to nurturing young children with care, curiosity, and trust. Our learning environment encourages every child to explore their potential and grow through meaningful experiences.',
   overviewDetail: 'A child’s development has many dimensions: physical, mental, intellectual, career, emotional, social, spiritual, and national. We believe every child has immense power within and the potential to do great things.',
   potentialQuote: 'Every child has immense power within - an infinite potential. They can do anything and everything.',
   potentialAttribution: 'Swami Vivekanand',

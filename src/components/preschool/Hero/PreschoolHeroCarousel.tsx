@@ -21,9 +21,9 @@ const preschoolSlides: PreschoolSlide[] = [
   {
     id: 'slide-1',
     badge: '☀️ ADMISSIONS OPEN 2026–2027',
-    headlineMain: 'Where Little Minds',
-    headlineHighlight: 'Grow, Play & Explore',
-    subtitle: 'A warm, joyful sanctuary where early childhood curiosity blossoms into deep learning through purposeful play.',
+    headlineMain: 'Play School in Amroha',
+    headlineHighlight: 'for Happy, Confident Learners',
+    subtitle: 'A joyful early learning environment where children build confidence, curiosity, and strong foundations through guided play and caring support.',
     image: '/assets/preschool/hero/little-wings-care-school-hero.webp',
     themeColor: preschoolPalette.primaryBlue,
   },
@@ -142,9 +142,45 @@ export const PreschoolHeroCarousel: React.FC = () => {
           }}
         />
       )}
+{/* 
+      <Box
+        component="img"
+        src="/assets/preschool/characters/avi/thoughtful-orange-bunny-mascot.png"
+        alt="Little Wings Care School bunny mascot"
+        sx={{
+          position: 'absolute',
+          right: { xs: '1%', sm: '3%', md: '6%' },
+          bottom: 0,
+          width: { xs: 115, sm: 175, md: 250 },
+          maxHeight: { xs: '52%', sm: '68%', md: '78%' },
+          objectFit: 'contain',
+          objectPosition: 'bottom',
+          zIndex: 2,
+          pointerEvents: 'none',
+        }}
+      /> */}
+
+      {currentIndex !== 0 && (
+        <Typography
+          component="h1"
+          sx={{
+            position: 'absolute',
+            width: 1,
+            height: 1,
+            p: 0,
+            m: -1,
+            overflow: 'hidden',
+            clip: 'rect(0, 0, 0, 0)',
+            whiteSpace: 'nowrap',
+            border: 0,
+          }}
+        >
+          Play School in Amroha for Happy, Confident Learners
+        </Typography>
+      )}
 
       {/* Hero Foreground Content */}
-  {currentIndex !== 1 && (
+      {currentIndex !== 1 && (
       <Container
         maxWidth="lg"
         sx={{
@@ -194,6 +230,7 @@ export const PreschoolHeroCarousel: React.FC = () => {
 
               {/* Main Headline */}
               <Typography
+                component={currentIndex === 0 ? 'h1' : 'h2'}
                 variant="h1"
                 sx={{
                   fontFamily: "'Fredoka', sans-serif",

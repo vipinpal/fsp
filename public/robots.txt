@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.greenvalley.edu.in/sitemap.xml
+Sitemap: https://littlewingscareplayschool.com/sitemap.xml
+Host: littlewingscareplayschool.com

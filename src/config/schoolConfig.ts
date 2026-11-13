@@ -63,8 +63,8 @@ export interface SchoolConfig {
 export const schoolConfig: SchoolConfig = {
   id: "little-wings-care-school",
   name: "Little Wings Care School",
-  shortName: "LWCS",
-  tagline: "The Rising Sun",
+  shortName: "Little Wings Care School",
+  tagline: "Let your child fly",
   board: "Preschool",
   classes: "Pre-Nursery, Nursery, LKG, UKG",
   mediumOfInstruction: "English",

@@ -1,49 +1,45 @@
-import React, { useState } from 'react';
-import { Box, Container, Typography, Grid, Paper, Chip, Modal, IconButton } from '@mui/material';
+import React, { useEffect, useRef, useState } from 'react';
+import { Box, Button, Container, Typography, Grid, Paper, Chip, Modal, IconButton } from '@mui/material';
 import { X as CloseIcon, ZoomIn } from 'lucide-react';
 import { galleryConfig, GalleryMediaItem } from '../../../config/preschool/gallery.config';
 
 export const PreschoolGallery: React.FC = () => {
   const [selectedCategory, setSelectedCategory] = useState<string>('All');
   const [activeItem, setActiveItem] = useState<GalleryMediaItem | null>(null);
+  const [visibleCount, setVisibleCount] = useState(4);
+  const loadMoreRef = useRef<HTMLDivElement | null>(null);
 
   const categories = ['All', 'Classrooms', 'Activities', 'Events', 'Playground', 'Celebrations'];
 
   const filteredItems = selectedCategory === 'All'
     ? galleryConfig
     : galleryConfig.filter((item) => item.category === selectedCategory);
+  const visibleItems = filteredItems.slice(0, visibleCount);
+
+  useEffect(() => {
+    setVisibleCount(4);
+  }, [selectedCategory]);
+
+  useEffect(() => {
+    const sentinel = loadMoreRef.current;
+    if (!sentinel || visibleCount >= filteredItems.length) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setVisibleCount((count) => Math.min(count + 4, filteredItems.length));
+        }
+      },
+      { rootMargin: '250px' },
+    );
+
+    observer.observe(sentinel);
+    return () => observer.disconnect();
+  }, [filteredItems.length, visibleCount]);
 
   return (
-    <Box id="gallery" sx={{ py: { xs: 8, md: 14 }, bgcolor: '#FFFDF9' }}>
+    <Box id="gallery" sx={{ pt: { xs: 4, md: 4 }, pb: { xs: 8, md: 14 }, bgcolor: '#FFFDF9' }}>
       <Container maxWidth="lg">
-        {/* Section Header */}
-        <Box sx={{ textAlign: 'center', mb: 6, maxWidth: 720, mx: 'auto' }}>
-          <Typography
-            variant="overline"
-            sx={{
-              fontFamily: "'Fredoka', sans-serif",
-              fontWeight: 700,
-              color: '#FF6B6B',
-              letterSpacing: '0.12em',
-              fontSize: '0.95rem',
-            }}
-          >
-            📸 MEMORABLE MOMENTS
-          </Typography>
-          <Typography
-            variant="h2"
-            sx={{
-              fontFamily: "'Fredoka', sans-serif",
-              fontWeight: 700,
-              color: '#2C3E50',
-              mt: 1,
-              fontSize: { xs: '2rem', md: '2.8rem' },
-            }}
-          >
-            Preschool Gallery Showcase
-          </Typography>
-        </Box>
-
         {/* Category Chips Bar */}
         <Box sx={{ display: 'flex', justifyContent: 'center', flexWrap: 'wrap', gap: 1.5, mb: 6 }}>
           {categories.map((cat) => {
@@ -76,10 +72,13 @@ export const PreschoolGallery: React.FC = () => {
 
         {/* Gallery Grid */}
         <Grid container spacing={3}>
-          {filteredItems.map((item) => (
+          {visibleItems.map((item) => (
             <Grid item xs={12} sm={6} md={4} key={item.id}>
               <Paper
                 elevation={0}
+                component="button"
+                type="button"
+                aria-label={`View ${item.title}`}
                 onClick={() => setActiveItem(item)}
                 sx={{
                   borderRadius: '24px',
@@ -87,6 +86,12 @@ export const PreschoolGallery: React.FC = () => {
                   cursor: 'pointer',
                   position: 'relative',
                   height: 280,
+                  width: '100%',
+                  p: 0,
+                  border: 0,
+                  textAlign: 'left',
+                  bgcolor: '#FFFFFF',
+                  font: 'inherit',
                   boxShadow: '0 10px 24px rgba(0,0,0,0.06)',
                   transition: 'all 0.4s ease',
                   '&:hover': {
@@ -141,6 +146,18 @@ export const PreschoolGallery: React.FC = () => {
             </Grid>
           ))}
         </Grid>
+
+        {visibleCount < filteredItems.length && (
+          <Box ref={loadMoreRef} sx={{ py: 4, textAlign: 'center' }}>
+            <Button
+              variant="outlined"
+              onClick={() => setVisibleCount((count) => Math.min(count + 4, filteredItems.length))}
+              sx={{ borderColor: '#FF6B6B', color: '#D94F61', fontWeight: 700 }}
+            >
+              Load more photos
+            </Button>
+          </Box>
+        )}
 
         {/* Lightbox Modal */}
         <Modal open={Boolean(activeItem)} onClose={() => setActiveItem(null)}>

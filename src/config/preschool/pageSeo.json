@@ -1,0 +1,44 @@
+{
+  "admissions": {
+    "path": "/admissions/",
+    "title": "Admissions Enquiries | Little Wings Care School",
+    "description": "Enquire about Pre-Nursery, Nursery, LKG and UKG admissions at Little Wings Care School, Amroha. Contact the school to discuss age guidance, availability or a visit.",
+    "eyebrow": "Admissions enquiries",
+    "heading": "Start a conversation with our school"
+  },
+  "programs": {
+    "path": "/programs/",
+    "title": "Our Preschool Programmes | Little Wings Care School",
+    "description": "Explore Pre-Nursery, Nursery, LKG and UKG at Little Wings Care School in Amroha. Contact us for age guidance and programme enquiries.",
+    "eyebrow": "A learning journey for every stage",
+    "heading": "Our Preschool Programmes"
+  },
+  "about": {
+    "path": "/about/",
+    "title": "About Little Wings Care School | Our Approach",
+    "description": "Learn about Little Wings Care School in Amroha, our child-centred learning approach, and how we support children through meaningful early learning experiences.",
+    "eyebrow": "A little about our school",
+    "heading": "About Little Wings Care School"
+  },
+  "contact": {
+    "path": "/contact/",
+    "title": "Contact Little Wings Care School | Amroha",
+    "description": "Contact Little Wings Care School in Amroha by phone, email or WhatsApp, get directions to Joya Road, or ask about arranging a school visit.",
+    "eyebrow": "📍 We are here to help",
+    "heading": "Contact Little Wings Care School"
+  },
+  "gallery": {
+    "path": "/gallery/",
+    "title": "School Gallery | Little Wings Care School, Amroha",
+    "description": "View the image gallery for Little Wings Care School in Amroha, including the photos currently shared by the school.",
+    "eyebrow": "School photos",
+    "heading": "Little Wings Care School Gallery"
+  },
+  "whyUs": {
+    "path": "/why-us/",
+    "title": "Why Choose Little Wings Care School | Amroha",
+    "description": "Discover the play-based learning approach, caring environment, and curriculum features at Little Wings Care School in Amroha.",
+    "eyebrow": "Learning with care and curiosity",
+    "heading": "Why Little Wings Care School"
+  }
+}

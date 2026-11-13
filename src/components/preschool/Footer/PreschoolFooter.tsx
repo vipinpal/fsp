@@ -3,7 +3,6 @@ import { Box, Container, Typography, Grid, IconButton } from '@mui/material';
 import { Phone, Mail, MapPin, MessageCircle, AtSign } from 'lucide-react';
 import { siteConfig } from '../../../config/site.config';
 import { programsConfig } from '../../../config/preschool/programs.config';
-import { SchoolProfileSection } from '../About/SchoolProfileSection';
 import { FacebookIcon, InstagramIcon, YoutubeIcon } from '../../common/BrandIcons';
 
 export const PreschoolFooter: React.FC = () => {
@@ -15,8 +14,6 @@ export const PreschoolFooter: React.FC = () => {
           <path d="M0,0 C150,90 350,-40 500,50 C650,140 900,10 1200,40 L1200,120 L0,120 Z" fill="#2C3E50" />
         </svg>
       </Box>
-
-      <SchoolProfileSection />
 
       <Container maxWidth="lg">
         <Box sx={{ mt: { xs: 2, md: 3 }, pt: { xs: 4, md: 5 }, borderTop: '1px solid rgba(255,255,255,0.2)' }}>
@@ -61,11 +58,22 @@ export const PreschoolFooter: React.FC = () => {
               Quick Links
             </Typography>
             <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1.2 }}>
-              {['Home', 'About Us', 'Why Us', 'Programs', 'Activities', 'Campus', 'Gallery', 'Contact'].map((item) => (
+              {[
+                { label: 'Home', href: '/' },
+                { label: 'About Our School', href: '/about/' },
+                { label: 'Why Us', href: '/why-us/' },
+                { label: 'Our Programmes', href: '/programs/' },
+                { label: 'Admissions', href: '/admissions/' },
+                { label: 'Activities', href: '/#activities' },
+                { label: 'Campus', href: '/#campus' },
+                { label: 'Gallery', href: '/gallery/' },
+                { label: 'Parents', href: '/#testimonials' },
+                { label: 'Contact Us', href: '/contact/' },
+              ].map((item) => (
                 <Box
-                  key={item}
+                  key={item.label}
                   component="a"
-                  href={`#${item.toLowerCase().replace(' ', '-')}`}
+                  href={item.href}
                   sx={{
                     color: 'rgba(255,255,255,0.8)',
                     textDecoration: 'none',
@@ -75,7 +83,7 @@ export const PreschoolFooter: React.FC = () => {
                     '&:hover': { color: '#FF6B6B' },
                   }}
                 >
-                  {item}
+                  {item.label}
                 </Box>
               ))}
             </Box>
@@ -91,7 +99,7 @@ export const PreschoolFooter: React.FC = () => {
                 <Box
                   key={program.id}
                   component="a"
-                  href="#programs"
+                  href="/programs/#programs"
                   sx={{
                     color: 'rgba(255,255,255,0.8)',
                     textDecoration: 'none',
@@ -127,7 +135,9 @@ export const PreschoolFooter: React.FC = () => {
               </Box>
               <Box sx={{ display: 'flex', gap: 1.5, alignItems: 'center', color: '#25D366', fontWeight: 700 }}>
                 <MessageCircle size={18} />
-                <span>WhatsApp: {siteConfig.whatsappPhone}</span>
+                <a href={`https://wa.me/${siteConfig.whatsappPhone}?text=${encodeURIComponent(siteConfig.whatsappMessage)}`} target="_blank" rel="noopener noreferrer" style={{ color: '#25D366', textDecoration: 'none' }}>
+                  WhatsApp: {siteConfig.whatsappPhone}
+                </a>
               </Box>
             </Box>
           </Grid>
